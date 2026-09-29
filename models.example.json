@@ -1,0 +1,30 @@
+{
+  "models": [
+    {
+      "base_url": "https://apinebula.ai",
+      "group_verified": false,
+      "id": "gpt_image_2_5_default",
+      "enabled": true,
+      "model": "gpt-image-2.5",
+      "group_requested": "default",
+      "endpoint": "/v1/images/edits",
+      "transport": "multipart",
+      "params": {
+        "size": "1024x1024",
+        "quality": "high"
+      },
+      "max_canvas_side": 1024,
+      "timeout_seconds": 600,
+      "min_interval_seconds": 1,
+      "pricing": {
+        "mode": "per_request",
+        "currency": "CNY",
+        "amount": 0.05,
+        "source": "user_provided_pricing_screenshot",
+        "actual_charge_verified": false
+      },
+      "endpoint_status": "Used by prior local experiments; not revalidated with a paid request",
+      "api_key_env": "APINEBULA_API_KEY"
+    }
+  ]
+}

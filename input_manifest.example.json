@@ -1,0 +1,1508 @@
+{
+  "schema": "bbox_class_only_v1",
+  "images": [
+    {
+      "index": 0,
+      "image_path": "images/civil_001090_DJI_20240802073149_0238_V_0.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "R",
+          "class_name": "Corrosion",
+          "bbox_xyxy": [
+            40,
+            900,
+            126,
+            2030
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "image_path": "images/civil_001250_DJI_20240802070758_0022_V_2.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "class_subtype": "GroundLitter",
+          "class_name_zh": "地面垃圾",
+          "bbox_xyxy": [
+            0,
+            263,
+            681,
+            877
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "class_subtype": "WallStain",
+          "class_name_zh": "墙面污渍",
+          "bbox_xyxy": [
+            0,
+            158,
+            681,
+            307
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "image_path": "images/civil_001486_DJI_20230802074612_0171_V_2.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            0,
+            0,
+            650,
+            431
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "V",
+          "class_name": "Vegetationgrowth",
+          "bbox_xyxy": [
+            208,
+            125,
+            448,
+            302
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "image_path": "images/civil_001596_DJI_20240716121153_1349_V_0.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "V",
+          "class_name": "Vegetationgrowth",
+          "bbox_xyxy": [
+            108,
+            108,
+            238,
+            335
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            216,
+            73,
+            317,
+            430
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "image_path": "images/civil_001790_DJI_20240802075055_0076_V_22.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            153,
+            154,
+            440,
+            524
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "image_path": "images/civil_002357_DJI_20240821091230_0262_V_0.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            211,
+            627
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            0,
+            89,
+            125
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            186,
+            82,
+            248,
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "image_path": "images/civil_002484_DJI_20240621111104_0058_V_3.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            96,
+            155,
+            321,
+            444
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "image_path": "images/civil_002621_DJI_20240624094533_0266_V_13.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            46,
+            101,
+            150,
+            403
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            136,
+            133,
+            173,
+            173
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            173,
+            197,
+            196,
+            250
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            162,
+            153,
+            231,
+            306
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "image_path": "images/civil_002711_DJI_20240624112525_0581_V_3.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "M",
+          "class_name": "Mapcracking",
+          "bbox_xyxy": [
+            163,
+            0,
+            581,
+            1352
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "image_path": "images/civil_003065_DJI_20240808110906_0272_V_10.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            25,
+            206,
+            113,
+            825
+          ]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "image_path": "images/civil_003293_DJI_20240429094033_0178_V_0.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            188,
+            74,
+            563,
+            252
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "image_path": "images/civil_003385_DJI_20230830092039_0013_V_1.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            88,
+            91,
+            298,
+            505
+          ]
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "image_path": "images/civil_003585_DJI_20240709110337_0005_V_0.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "R",
+          "class_name": "Corrosion",
+          "bbox_xyxy": [
+            0,
+            417,
+            193,
+            546
+          ]
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "image_path": "images/civil_003656_DJI_20240528105657_0529_V_4.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "M",
+          "class_name": "Mapcracking",
+          "bbox_xyxy": [
+            189,
+            15,
+            503,
+            493
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            426,
+            175,
+            475,
+            514
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            650,
+            0,
+            692,
+            242
+          ]
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "image_path": "images/civil_004617_DJI_20240624110822_0050_V_12.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            84,
+            161,
+            256,
+            598
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            336,
+            114
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            260,
+            175,
+            290,
+            659
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            252,
+            128,
+            286,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "image_path": "images/civil_004688_DJI_20240624094746_0399_V_2.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            35,
+            0,
+            259,
+            294
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            268,
+            421,
+            657,
+            856
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            570,
+            932,
+            769,
+            1213
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            769,
+            932,
+            855,
+            1073
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            631,
+            153,
+            760,
+            396
+          ]
+        },
+        {
+          "id": 6,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            812,
+            383,
+            864,
+            485
+          ]
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "image_path": "images/civil_004768_DJI_20240624111853_0248_V_11.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            149,
+            0,
+            439,
+            105
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            101,
+            112,
+            342,
+            369
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            66,
+            323,
+            114,
+            422
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            114,
+            316,
+            294,
+            435
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            176,
+            165,
+            391,
+            468
+          ]
+        },
+        {
+          "id": 6,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            119,
+            448,
+            439,
+            494
+          ]
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "image_path": "images/civil_004839_DJI_20240821105343_0720_V_8.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            63,
+            0,
+            289,
+            290
+          ]
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "image_path": "images/civil_004995_DJI_20230905084649_0029_V_5.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "V",
+          "class_name": "Vegetationgrowth",
+          "bbox_xyxy": [
+            235,
+            238,
+            477,
+            588
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            164,
+            72,
+            221,
+            636
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            0,
+            0,
+            206,
+            231
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            562,
+            318,
+            634,
+            358
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            562,
+            398,
+            641,
+            445
+          ]
+        },
+        {
+          "id": 6,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            598,
+            461,
+            641,
+            509
+          ]
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "image_path": "images/civil_005042_DJI_20240627104808_0411_V_14.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "M",
+          "class_name": "Mapcracking",
+          "bbox_xyxy": [
+            0,
+            88,
+            900,
+            241
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            494,
+            91,
+            890,
+            237
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            890,
+            153,
+            989,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "image_path": "images/civil_005329_DJI_20230814091833_0079_V_14.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            126,
+            112,
+            275,
+            218
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            81,
+            0,
+            142,
+            321
+          ]
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "image_path": "images/civil_005562_DJI_20230802073945_0074_V_28.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            521,
+            887
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            198,
+            417,
+            490,
+            887
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            266,
+            35,
+            323,
+            213
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            380,
+            0,
+            521,
+            293
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            0,
+            0,
+            198,
+            275
+          ]
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "image_path": "images/civil_006001_DJI_20240612155222_0081_V_16.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            29,
+            128,
+            94,
+            203
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            97,
+            86,
+            234,
+            193
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            234,
+            150,
+            266,
+            182
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            158,
+            268,
+            277,
+            460
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            0,
+            364,
+            86,
+            578
+          ]
+        },
+        {
+          "id": 6,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            122,
+            417,
+            227,
+            824
+          ]
+        },
+        {
+          "id": 7,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            32,
+            171,
+            227,
+            845
+          ]
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "image_path": "images/open_001918_istockphoto-484578825-612x612_jpg.rf.1f366a5098a2cc9aaa7de26930c58fe8.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            0,
+            0,
+            416,
+            379
+          ]
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "image_path": "images/open_001967_cls05_334.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            138,
+            179,
+            512,
+            420
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            0,
+            15,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "image_path": "images/open_002104_cls05_238.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            195,
+            148,
+            374
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            143,
+            138,
+            364,
+            389
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            128,
+            394,
+            154,
+            445
+          ]
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "image_path": "images/open_002597_cls05_394.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            205,
+            0,
+            348,
+            481
+          ]
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "image_path": "images/open_004007_istockphoto-1095690108-612x612_jpg.rf.350e9c0c4f34e155c10eeb60607b5436.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            54,
+            0,
+            395,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "image_path": "images/open_004229_hk2126.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            1480,
+            521,
+            4624,
+            2187
+          ]
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "image_path": "images/open_004234_cls05_315.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            440,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "image_path": "images/open_004801_hk0012.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            1180,
+            4624,
+            3298
+          ]
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "image_path": "images/open_005038_cls05_362.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            67,
+            317,
+            333
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            118,
+            195,
+            512,
+            369
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            123,
+            276,
+            410,
+            497
+          ]
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "image_path": "images/open_006206_hk2447.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            0,
+            4624,
+            3125
+          ]
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "image_path": "images/open_006781_cls05_460.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            169,
+            20,
+            364,
+            189
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "T",
+          "class_name": "Ruststain",
+          "bbox_xyxy": [
+            164,
+            338,
+            333,
+            456
+          ]
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "image_path": "images/open_006805_istockphoto-1071523466-612x612_jpg.rf.01d4577bbd8fded3a591a0b633a424ac.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            100,
+            0,
+            412,
+            179
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            0,
+            100,
+            25,
+            125
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            37,
+            133,
+            75,
+            179
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            4,
+            179,
+            287,
+            316
+          ]
+        },
+        {
+          "id": 5,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            0,
+            337,
+            87,
+            416
+          ]
+        },
+        {
+          "id": 6,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            100,
+            316,
+            341,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "image_path": "images/open_007203_419.png",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            0,
+            881,
+            1024
+          ]
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "image_path": "images/open_007219_cls03_079.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            507,
+            379
+          ]
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "image_path": "images/open_007238_520.png",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "L",
+          "class_name": "Leakagestain",
+          "bbox_xyxy": [
+            0,
+            174,
+            1024,
+            1024
+          ]
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "image_path": "images/open_007254_cls05_112.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            10,
+            46,
+            512,
+            297
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            0,
+            118,
+            102
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "R",
+          "class_name": "Corrosion",
+          "bbox_xyxy": [
+            77,
+            87,
+            497,
+            174
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "L",
+          "class_name": "Leakagestain",
+          "bbox_xyxy": [
+            82,
+            251,
+            287,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "image_path": "images/open_007460_cls05_068.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            138,
+            512,
+            384
+          ]
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "image_path": "images/open_007464_cls03_435.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            41,
+            0,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "image_path": "images/open_007478_540.png",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            174,
+            410,
+            788,
+            635
+          ]
+        },
+        {
+          "id": 2,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            420,
+            635,
+            952,
+            952
+          ]
+        },
+        {
+          "id": 3,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            0,
+            481,
+            1024,
+            1014
+          ]
+        },
+        {
+          "id": 4,
+          "class_code": "D",
+          "class_name": "Surfacecontaminants",
+          "bbox_xyxy": [
+            154,
+            0,
+            328,
+            461
+          ]
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "image_path": "images/open_007493_cls05_102.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            189,
+            512,
+            410
+          ]
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "image_path": "images/open_007770_cls03_054.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            51,
+            87,
+            440,
+            445
+          ]
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "image_path": "images/open_007900_097.png",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            0,
+            0,
+            1024,
+            1024
+          ]
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "image_path": "images/open_007964_cls03_313.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            0,
+            72,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "image_path": "images/open_008133_cls03_398.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            143,
+            205,
+            358,
+            312
+          ]
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "image_path": "images/open_008175_hk1696.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "C",
+          "class_name": "Linearcrack",
+          "bbox_xyxy": [
+            0,
+            69,
+            4624,
+            3472
+          ]
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "image_path": "images/open_008267_cls05_439.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "S",
+          "class_name": "Spalling",
+          "bbox_xyxy": [
+            113,
+            0,
+            251,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "image_path": "images/open_008279_cls03_168.jpg",
+      "defects": [
+        {
+          "id": 1,
+          "class_code": "P",
+          "class_name": "Peeling",
+          "bbox_xyxy": [
+            154,
+            128,
+            338,
+            461
+          ]
+        }
+      ]
+    }
+  ]
+}

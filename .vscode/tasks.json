@@ -1,0 +1,105 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Mask: Dry run",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/batch_local.py",
+        "--start",
+        "0",
+        "--end",
+        "49",
+        "--output",
+        "outputs_api50"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Mask: Run (paid)",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/batch_local.py",
+        "--start",
+        "0",
+        "--end",
+        "49",
+        "--output",
+        "outputs_api50",
+        "--run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Mask: Retry failed (paid)",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/batch_local.py",
+        "--start",
+        "0",
+        "--end",
+        "49",
+        "--output",
+        "outputs_api50",
+        "--run",
+        "--retry-failed"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Mask: Review only",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/batch_local.py",
+        "--start",
+        "0",
+        "--end",
+        "49",
+        "--output",
+        "outputs_api50",
+        "--review-only"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

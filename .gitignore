@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+.env
+*token*
+*key*.txt
+models.json
+input_manifest.json
+images/
+outputs*/
+results50*/
