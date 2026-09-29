@@ -1,0 +1,4 @@
+interface:
+  display_name: "建筑缺陷 OpenCV Mask"
+  short_description: "建筑缺陷自动分割与引导线、轮廓辅助精修，输出mask及可追溯记录"
+  default_prompt: "使用 $facade-opencv-mask，按任务区分bbox自动基线与视觉辅助精修，生成原尺寸mask并记录方法与辅助投入。"

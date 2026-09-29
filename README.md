@@ -43,3 +43,34 @@ python test_geometry.py
 截至本次汇总：50张109实例，成功105，46张实例齐全，4个失败：25/ID2、27/ID1、30/ID1、39/ID1。两批累计152次请求，已知估算¥5.15，49次费用未知；不含00、04复用结果的原始请求与更早被舍弃试验。不是准确率，尚未专家验收，不可直接当作真值。
 
 `batch_local_first10_snapshot.py`保留首批代码，`run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。图片和生成结果未上传仓库。04人工视觉辅助精修不纳入纯API实验。
+
+
+## 可选 skill / OpenCV 精修（默认关闭）
+
+纯API执行命令保持不变，不需要安装skill或OpenCV。需要精修时另行选择：
+
+```powershell
+pip install -r requirements-refine.txt
+python prepare_refine_input.py --input outputs_api50/gpt_image_2_5_default --output API_RESULT_DIR
+python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR
+python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run
+# 输入、参数不变时续跑
+python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run --resume
+```
+
+先用prepare_refine_input.py将API模型子目录整理成相对images路径的独立输入；需要原图仍在原位置。本次collect_results50.py生成的汇总已经可直接作为精修输入。精修不会调用API，不覆盖原mask。详见 [精修说明](REFINEMENT.md)。
+
+`skills/facade-opencv-mask`是可选Codex skill，可自行安装到个人skills目录；不安装也可直接运行Python代码。Python终端不会自动执行SKILL.md。独立skill内含纯OpenCV segment.py、辅助guided.py和自动后处理refine_api_masks.py，分别区分bbox基线、人工引导、模型mask后处理。额外视觉引导不混入自动基线。
+
+## 三方法评估
+
+见 [量化报告](EVALUATION.md) 和 [统计文件](evaluation/summary.json)。参考来自用户保留的候选标注，未独立专家验收。全109实例宏IoU：OpenCV 0.3908、API 0.4056、混合0.4283；混合边界F1却比API下降，不宣称全面改善。
+
+```powershell
+python compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
+python test_refine_api_masks.py
+python test_refine_save.py
+python test_comparison_metrics.py
+```
+
+评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。图片与完整mask留在本地，不上传本仓库。

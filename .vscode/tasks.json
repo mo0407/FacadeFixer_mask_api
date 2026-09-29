@@ -100,6 +100,63 @@
         "reveal": "always",
         "panel": "dedicated"
       }
+    },
+    {
+      "label": "Refine dry run",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/refine_api_masks.py",
+        "--input",
+        "${workspaceFolder}/API_RESULT_DIR",
+        "--output",
+        "${workspaceFolder}/outputs_refined50_v1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Refine offline",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/refine_api_masks.py",
+        "--input",
+        "${workspaceFolder}/API_RESULT_DIR",
+        "--output",
+        "${workspaceFolder}/outputs_refined50_v1",
+        "--run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Resume refinement",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-X",
+        "utf8",
+        "${workspaceFolder}/refine_api_masks.py",
+        "--input",
+        "${workspaceFolder}/API_RESULT_DIR",
+        "--output",
+        "${workspaceFolder}/outputs_refined50_v1",
+        "--run",
+        "--resume"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     }
   ]
 }
