@@ -76,15 +76,16 @@ python test_comparison_metrics.py
 评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。完整HTML报告、原图、叠加图及总mask现已放在 reports/comparison50/；逐实例中间结果保留在本地。
 
 
-## 可离线查看的完整报告
+## 在线查看完整报告
 
-[报告目录](reports/comparison50/) · [HTML](reports/comparison50/comparison.html)。下载仓库ZIP并解压后，用浏览器打开该HTML；GitHub文件页面显示HTML源码，不代表页面无法使用。本次未启用GitHub Pages。
+**[在线查看50张缺陷分割对比报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html)**
 
-报告已补充四组mask的输入、方法、人工参与和限制，并提供每张的黑白mask链接。参考为多轮修订的候选标注，不是独立专家真值。
+GitHub Pages 已启用，可直接用浏览器打开上方网址，也可以分享给其他人，无需下载文件。
 
+报告包含原图、参考标注、OpenCV、image2.5、image2.5＋OpenCV的对比，并说明四组mask的生成方法，提供原尺寸黑白mask及IoU、Dice、精确率、召回率和边界F1。参考标注是多轮修订的候选版本，并非独立专家真值。
 
-### ??????
+### 离线查看
 
-[????50?????????](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html)
+[报告目录](reports/comparison50/) · [HTML文件](reports/comparison50/comparison.html)
 
-??? GitHub Pages???????????????????????????
+下载仓库ZIP并解压后，用浏览器打开 `reports/comparison50/comparison.html`。GitHub仓库中的HTML文件页面显示源码，在线浏览请使用上方GitHub Pages网址。
