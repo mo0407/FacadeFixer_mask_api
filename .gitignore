@@ -8,3 +8,7 @@ input_manifest.json
 images/
 outputs*/
 results50*/
+
+# Published report assets must be tracked
+!reports/comparison50/images/
+!reports/comparison50/images/**
