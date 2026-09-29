@@ -1,0 +1,1002 @@
+[
+  {
+    "index": 0,
+    "method": "reference",
+    "annotation_sha256": "b979db7cf0c238b68a9754ad517c97c3646c9d726d64811ddc92a0ece0459a80"
+  },
+  {
+    "index": 0,
+    "method": "opencv",
+    "annotation_sha256": "a9580fe730f63aa12abefa73fb05f57ea1fd142880e37ed6818e88d71e399fef"
+  },
+  {
+    "index": 0,
+    "method": "image25",
+    "annotation_sha256": "0381bcbde81d1feca72b99dec8165e637be69f4bb4d38cbe9b1212788f2d3d87"
+  },
+  {
+    "index": 0,
+    "method": "hybrid",
+    "annotation_sha256": "6a8ee8f5fb72e6312a3a462ca5bbb70b91f1969ea225e3e114f09bbde53ce33d"
+  },
+  {
+    "index": 1,
+    "method": "reference",
+    "annotation_sha256": "e0d39078a480fff4b7f901b4bffe1258b863f7e1511661cff48dd929efb96449"
+  },
+  {
+    "index": 1,
+    "method": "opencv",
+    "annotation_sha256": "8b01e1bd2faca7a64b4cf8c4456ae5dc081f126843cd13debed19264c3e1c8de"
+  },
+  {
+    "index": 1,
+    "method": "image25",
+    "annotation_sha256": "1a37ad997ef2aa7826bd03fc6466f9e984acbdd7aef662a0fd9d205b68dbe9f0"
+  },
+  {
+    "index": 1,
+    "method": "hybrid",
+    "annotation_sha256": "1c61fa0a392776bb60d37d35a16717404eac09a6bc6a902062ddacbcb9eeb7d9"
+  },
+  {
+    "index": 2,
+    "method": "reference",
+    "annotation_sha256": "7c639b6f6848d334ec2cfb44a4f2fcb32088084c92a8512a433bd079044d9173"
+  },
+  {
+    "index": 2,
+    "method": "opencv",
+    "annotation_sha256": "5836fcc9e290bd14458a003fb54955b9aece6fce06fb911a761be8ccba9deeff"
+  },
+  {
+    "index": 2,
+    "method": "image25",
+    "annotation_sha256": "6be05fdfac8d68182999c1f42623922f732dec48bc1ac1d762d9564942c76de7"
+  },
+  {
+    "index": 2,
+    "method": "hybrid",
+    "annotation_sha256": "e77b04cebddb4c385ac96b63a3a9bd69d66a72c1f8258fd171d7f345d9c00017"
+  },
+  {
+    "index": 3,
+    "method": "reference",
+    "annotation_sha256": "e0163c60c72f686206f8f536a042281bb87c80019c335adde81a08b0e24c35e2"
+  },
+  {
+    "index": 3,
+    "method": "opencv",
+    "annotation_sha256": "7e80b379139280db93384b54e2a2c59b395554a902554837439240544c353972"
+  },
+  {
+    "index": 3,
+    "method": "image25",
+    "annotation_sha256": "dd71ce4652e99fdf9bea55c2b1c39219edd4b009f58c5609f15c8f13f495cfbf"
+  },
+  {
+    "index": 3,
+    "method": "hybrid",
+    "annotation_sha256": "c950b314c587e594265177a72dd521b96a989064714e229b4277939e9d27b081"
+  },
+  {
+    "index": 4,
+    "method": "reference",
+    "annotation_sha256": "911761616f674a14489b60cae1ce8cb9653f89e4b4fea8650e06ecb011f57941"
+  },
+  {
+    "index": 4,
+    "method": "opencv",
+    "annotation_sha256": "8c95060725fd04c797b2f0fe9fa44c3564ebbadcd207d52e2e4acd992067acda"
+  },
+  {
+    "index": 4,
+    "method": "image25",
+    "annotation_sha256": "de1128364cd0cda34fe5bdf874dad9c14a49e52919847856e16b31fcd2568b11"
+  },
+  {
+    "index": 4,
+    "method": "hybrid",
+    "annotation_sha256": "6f71daae40d908c5c84cb6170ff63412d4838d1275bbf53d8ec1df8c8f4af25e"
+  },
+  {
+    "index": 5,
+    "method": "reference",
+    "annotation_sha256": "171b36ac0a5263467f8d166a72e0ba552dfd38e5b2d6b05cff39c41d69e7af85"
+  },
+  {
+    "index": 5,
+    "method": "opencv",
+    "annotation_sha256": "fe03352aa295eb727df0b155fef4d73fa7f13e36ec00201f88e90ac93416f297"
+  },
+  {
+    "index": 5,
+    "method": "image25",
+    "annotation_sha256": "4d6648a5b9c8726579b6b256239e11d2cc4ae88565e38df5332673bb84091fe9"
+  },
+  {
+    "index": 5,
+    "method": "hybrid",
+    "annotation_sha256": "2e82235e7a9bfa785b8ec57acc1c6bde5f52ccb62000558cf81764b592e37250"
+  },
+  {
+    "index": 6,
+    "method": "reference",
+    "annotation_sha256": "138014140df3db69e7d911e264250f2f7ca58650e5c41f4e11322e33a7df1675"
+  },
+  {
+    "index": 6,
+    "method": "opencv",
+    "annotation_sha256": "a12aacd9f58bed8b9fb589a432ed301deb9ba4291a9e34383b3288aeb76613ba"
+  },
+  {
+    "index": 6,
+    "method": "image25",
+    "annotation_sha256": "0dbaa97b1f2bff313f377f23fd89226d2fe277ec3eb395eff0e1980e8e23cb2e"
+  },
+  {
+    "index": 6,
+    "method": "hybrid",
+    "annotation_sha256": "f326b51af2a347174d99f817242440c52efc94cc55b110377818c2599cb3071b"
+  },
+  {
+    "index": 7,
+    "method": "reference",
+    "annotation_sha256": "55d374bc8ecc92113651593dcb3c12c050ab170b15a4f52e4d8124afade98223"
+  },
+  {
+    "index": 7,
+    "method": "opencv",
+    "annotation_sha256": "b16e5621825d62699f077924447344e3bd2a2790a085eee762c5b04f0185b242"
+  },
+  {
+    "index": 7,
+    "method": "image25",
+    "annotation_sha256": "cb36e5fcbc93a754b7bc726e28d166f0a63a7a8bf4d24858296a781533f66155"
+  },
+  {
+    "index": 7,
+    "method": "hybrid",
+    "annotation_sha256": "95c7eb8cf69a9318721fd1a3cba462853930d1757818c9f3fb08bc8268d3e2c5"
+  },
+  {
+    "index": 8,
+    "method": "reference",
+    "annotation_sha256": "eae7b5b25741fd053f1826e521263e2e7b8b33c73ea73e3bed8ffa65b61e63f7"
+  },
+  {
+    "index": 8,
+    "method": "opencv",
+    "annotation_sha256": "a793b138b47652929fca8b0325ed6b86790bce8722d39f031eb41ba1f98dc5b8"
+  },
+  {
+    "index": 8,
+    "method": "image25",
+    "annotation_sha256": "961966d5a41bc5298ecf9316db03adabe0ae3d851d4b1b7c9625e93883100d4c"
+  },
+  {
+    "index": 8,
+    "method": "hybrid",
+    "annotation_sha256": "d43e8f3aba693dbd9f7979fc2f9f6618225be5ed70ba26d3517cc17d6ece0f3a"
+  },
+  {
+    "index": 9,
+    "method": "reference",
+    "annotation_sha256": "3bf4c9f02ca3cee1f13e619223eddf30eeefa66d2170161d1492faa46874fa50"
+  },
+  {
+    "index": 9,
+    "method": "opencv",
+    "annotation_sha256": "5e5808cbcc9598d00f949a28aebec3e03b0cadabb2bb7d3759bfb4c96ac4a548"
+  },
+  {
+    "index": 9,
+    "method": "image25",
+    "annotation_sha256": "1155a220912bb187eaab1f9aeaf69065c19c287d3ea1cc2126508db08d558c56"
+  },
+  {
+    "index": 9,
+    "method": "hybrid",
+    "annotation_sha256": "698238d79e7a4db8e41ce8c29faffed73543f811113d3522fd3742d8ed2ff7f5"
+  },
+  {
+    "index": 10,
+    "method": "reference",
+    "annotation_sha256": "a2691a666a188c3160c68690d9ca46e1a500fd00488d62c194b433b42eb7ffed"
+  },
+  {
+    "index": 10,
+    "method": "opencv",
+    "annotation_sha256": "d83395cae1abc33f81b27cdf3fa9a4ece0cd3bb588f0455fe23bcea14e2acc6f"
+  },
+  {
+    "index": 10,
+    "method": "image25",
+    "annotation_sha256": "b074184f670510a256e108b98862998df2b261d1d359459b1a990cf996e3ef8d"
+  },
+  {
+    "index": 10,
+    "method": "hybrid",
+    "annotation_sha256": "84dd03e81532a179c630422064f54090284f1d6300da146cb385d0f60d4443ed"
+  },
+  {
+    "index": 11,
+    "method": "reference",
+    "annotation_sha256": "05befc34a1e297c5321b1c25ba7a8270afe8bd8ba82010db146659ffa8b09d99"
+  },
+  {
+    "index": 11,
+    "method": "opencv",
+    "annotation_sha256": "290f330fb664f5f48df2762f1924bef63a02442734c9f7234e28353ca8b5eac6"
+  },
+  {
+    "index": 11,
+    "method": "image25",
+    "annotation_sha256": "47bb99d2f42f41f6988622f01dc1540e1db2bc5051b78aea7ccbe5f59f639916"
+  },
+  {
+    "index": 11,
+    "method": "hybrid",
+    "annotation_sha256": "59fdb47ce9248acbaf60046453d13ecbcec9753dce9cf48efa631130e320823d"
+  },
+  {
+    "index": 12,
+    "method": "reference",
+    "annotation_sha256": "2a1ebfe3d62c3ed3692c276a5ff271917379877d63363ed41bb321bfb933529d"
+  },
+  {
+    "index": 12,
+    "method": "opencv",
+    "annotation_sha256": "49621c85562ffbdcd8bc23195c1a90c0c0a060069e27c87599b27accd31d24bc"
+  },
+  {
+    "index": 12,
+    "method": "image25",
+    "annotation_sha256": "1084ecc98780c714612f478fb10b9b45d910b10c985640787d4b79e307eccc6c"
+  },
+  {
+    "index": 12,
+    "method": "hybrid",
+    "annotation_sha256": "154d438ea910ae2179ae369459971c88369086d4678452800dc7f02ca783368e"
+  },
+  {
+    "index": 13,
+    "method": "reference",
+    "annotation_sha256": "5bc328fcd2c94fc9d611a1a6de6b7f6f6717dd1db769ec9fd8e20f5509cdfe6d"
+  },
+  {
+    "index": 13,
+    "method": "opencv",
+    "annotation_sha256": "625b1625c47d45d6f0be284af11b17eecbd2009d1d55f84fe048f5a29824b30e"
+  },
+  {
+    "index": 13,
+    "method": "image25",
+    "annotation_sha256": "3b8d59d75f9254f68c005bf7d78a97ce86851b2c1271ff0e214b3d2492fb159e"
+  },
+  {
+    "index": 13,
+    "method": "hybrid",
+    "annotation_sha256": "eda104036872e1ab14e380c0732c8de0aba9e2325f3f30f0d118bcb6eec56d0e"
+  },
+  {
+    "index": 14,
+    "method": "reference",
+    "annotation_sha256": "5c2e5650defa916a4602cdbaefe0052eeb7cf375e9c10bec24f70cfaa9b4d7db"
+  },
+  {
+    "index": 14,
+    "method": "opencv",
+    "annotation_sha256": "712e68eeb5d474ce35dd56b1935c145157f6618d253236c9b7dbb9f0555b4671"
+  },
+  {
+    "index": 14,
+    "method": "image25",
+    "annotation_sha256": "cadf04f5434a71efbd171a470792a20a25d62a812ed1ad1fe49535381b0702dc"
+  },
+  {
+    "index": 14,
+    "method": "hybrid",
+    "annotation_sha256": "b243e0d5475092564dc17db3ae23f2edc92ee49323d376b23f39cc1182dd8198"
+  },
+  {
+    "index": 15,
+    "method": "reference",
+    "annotation_sha256": "3081054e8d60b77143276b1c6e4cb184dd2ecfff6d57c3c4a84ed0feed9b776c"
+  },
+  {
+    "index": 15,
+    "method": "opencv",
+    "annotation_sha256": "02686466427aa012e29b081e888fd5fe561ad60988525664b40f7f4f7fa2f9ed"
+  },
+  {
+    "index": 15,
+    "method": "image25",
+    "annotation_sha256": "82a0f99b4d6bf8342e2bd94d8e679ee02c3e0b214a2c7cb720ebf385f9b4bfe3"
+  },
+  {
+    "index": 15,
+    "method": "hybrid",
+    "annotation_sha256": "e5386880e147cdf969b6c7540da8554f8d085ca22a701eeabebb110447d8d588"
+  },
+  {
+    "index": 16,
+    "method": "reference",
+    "annotation_sha256": "bc3f79ff5056ef7adb714c50c1b4a34780d7f9e72e905cb432554fe2e843372b"
+  },
+  {
+    "index": 16,
+    "method": "opencv",
+    "annotation_sha256": "761ab8041960dd29d2e8474f1c718762ce13b7e42de3511258090eecd9177c00"
+  },
+  {
+    "index": 16,
+    "method": "image25",
+    "annotation_sha256": "3eaa10aa694e1b112e30df6643f6b9812373769669e20955807633f69b094066"
+  },
+  {
+    "index": 16,
+    "method": "hybrid",
+    "annotation_sha256": "e35de635f0ee84314b6e82af07e2882ae2a8ceb04d0c1aa3e8c34bd9247edfd9"
+  },
+  {
+    "index": 17,
+    "method": "reference",
+    "annotation_sha256": "0c0f4bb631b9d74f9798ccd4498350ae5049106168d4934173501fbab8aea96c"
+  },
+  {
+    "index": 17,
+    "method": "opencv",
+    "annotation_sha256": "3123dfa1e02000a7c364e17e6afec64d84b8d25230f9b158f7d9d788571cb633"
+  },
+  {
+    "index": 17,
+    "method": "image25",
+    "annotation_sha256": "1e0bc7f0157b53f38e86a13a3e502e8dea79844c60133d2addb1014cbb19d84a"
+  },
+  {
+    "index": 17,
+    "method": "hybrid",
+    "annotation_sha256": "f62a40e65c8d6f74a4e6b474e4d58b150f878e1b906e182be8db0f28780313da"
+  },
+  {
+    "index": 18,
+    "method": "reference",
+    "annotation_sha256": "e4d62420928c77932f785c2f2b096bd7149242cc058812e63e0bdd33e5e264dc"
+  },
+  {
+    "index": 18,
+    "method": "opencv",
+    "annotation_sha256": "d47619e1d2f3a940b831a5a8ae58ae608988de74f3aefd53b905e6cb61e4df11"
+  },
+  {
+    "index": 18,
+    "method": "image25",
+    "annotation_sha256": "8174f8cdb3c787dc6cc0a9683b365da743f096b5c8c4989efda9fd1ec0d567ae"
+  },
+  {
+    "index": 18,
+    "method": "hybrid",
+    "annotation_sha256": "415593621ed697d6434eb594295eae2b059085abc1ff941ef1193ef7ad8d0f07"
+  },
+  {
+    "index": 19,
+    "method": "reference",
+    "annotation_sha256": "4a7745e56844941e63ec8c502b87a2bdf6c299e965cc24e18089bb6b46077ab1"
+  },
+  {
+    "index": 19,
+    "method": "opencv",
+    "annotation_sha256": "0c4db13d0a83150eeb8e139fd046d53cbe2de1092ba6a43c8ef5dc6b3b1b1078"
+  },
+  {
+    "index": 19,
+    "method": "image25",
+    "annotation_sha256": "6d20b50cc2a309532045eb30908c46ef3066d973ef9a88274b99978cf4409129"
+  },
+  {
+    "index": 19,
+    "method": "hybrid",
+    "annotation_sha256": "6f2fe7032f245832080f375d3f8b42c8c4aa04f5c53ad7a923a8fb693b05b769"
+  },
+  {
+    "index": 20,
+    "method": "reference",
+    "annotation_sha256": "853389e3449f6448f6995e04db5d970654ebd9ef3fd9c20541c6fc818bf7b565"
+  },
+  {
+    "index": 20,
+    "method": "opencv",
+    "annotation_sha256": "89095e570c743810af478168fd4aac8d79f9c865ab1de0b3b51fbb1b197e9218"
+  },
+  {
+    "index": 20,
+    "method": "image25",
+    "annotation_sha256": "e1fd9f55e091ee0aabedcdaf0a1fede464e0d99cf349c7302d6e43cc5dd82b82"
+  },
+  {
+    "index": 20,
+    "method": "hybrid",
+    "annotation_sha256": "2ab9d990bd10c413e3ab6bf349a4e3536d3fa0a7203a1bb82ebba1322b367aa2"
+  },
+  {
+    "index": 21,
+    "method": "reference",
+    "annotation_sha256": "e2aa99e9549891b5c96f219ff8d808fb9fe530e1cdddb37813255800173135f2"
+  },
+  {
+    "index": 21,
+    "method": "opencv",
+    "annotation_sha256": "54961aa9b2314a361ad97ef74c2f4f6371986c2128aa521bed4ef14c2719c1ed"
+  },
+  {
+    "index": 21,
+    "method": "image25",
+    "annotation_sha256": "c5ffca86effdac721ed2ddf344835477dc8ff3397d8394f4c3aaa0a947c6eba7"
+  },
+  {
+    "index": 21,
+    "method": "hybrid",
+    "annotation_sha256": "93aed83680bc6eab50ee4620d10817af6c9abe736fe2c55a46834f4029b046f8"
+  },
+  {
+    "index": 22,
+    "method": "reference",
+    "annotation_sha256": "2f1a512b4a8b6994f25af0d51f5a3200c92b1359c8bff355ed54fd281474dd79"
+  },
+  {
+    "index": 22,
+    "method": "opencv",
+    "annotation_sha256": "4ebedc5ec48ba581599a117752c53ba035552377e129f89391e5be1587bac60b"
+  },
+  {
+    "index": 22,
+    "method": "image25",
+    "annotation_sha256": "03a316489ea6879bded40b4c4c9b37ddc73aa73b4780e231d0696fcf01f1b01a"
+  },
+  {
+    "index": 22,
+    "method": "hybrid",
+    "annotation_sha256": "997adb890fe69ca1c57fa2731b9384bed629471b56068a46bce1478f6537303d"
+  },
+  {
+    "index": 23,
+    "method": "reference",
+    "annotation_sha256": "ac97d78a11bca61562af1324ed3b3b4bba9249f7bf6c5e369489a487c29b7739"
+  },
+  {
+    "index": 23,
+    "method": "opencv",
+    "annotation_sha256": "d2a33d607bac2eab69d24e1e98448a4a192ec54236bb91724e81c9128c094482"
+  },
+  {
+    "index": 23,
+    "method": "image25",
+    "annotation_sha256": "41185d877a8005d15a32984d2a0b4f2f2a9209ce853d6d196bdeb20bed958bd5"
+  },
+  {
+    "index": 23,
+    "method": "hybrid",
+    "annotation_sha256": "f15230a24442eb11db132c0d7dde9703bc2078361e1844a175b17d26f77340b0"
+  },
+  {
+    "index": 24,
+    "method": "reference",
+    "annotation_sha256": "cf71df2862387f5e7838d03c2dd73d83f84c0c795b1a8538465113cd062d83b9"
+  },
+  {
+    "index": 24,
+    "method": "opencv",
+    "annotation_sha256": "2b25b5b70903621ec0bb4d6aeecb82c60ae6d9fd5caa15604d14f5ea88e1ebd1"
+  },
+  {
+    "index": 24,
+    "method": "image25",
+    "annotation_sha256": "20b3ec08f99ae8cf43c5a0d5f7b68eb68a615414b6fd9f4e8a2e4717dbcc2a34"
+  },
+  {
+    "index": 24,
+    "method": "hybrid",
+    "annotation_sha256": "0ab08e548308967dab5fe9fc4786f3bc624ebf7833f5e81660c019253ed67224"
+  },
+  {
+    "index": 25,
+    "method": "reference",
+    "annotation_sha256": "baf78b0df3dfdb6e632fa474f9835c95dacc690df7bc3cbade78578e9344d8ef"
+  },
+  {
+    "index": 25,
+    "method": "opencv",
+    "annotation_sha256": "a1c6b92d2f095396ce535075d1de8b6fcab8fdbd35fb83b6b19a6828e1651088"
+  },
+  {
+    "index": 25,
+    "method": "image25",
+    "annotation_sha256": "5bb551d85890f33dfdc945c439766e12dc232686d255d5aaaa9ad8e46678461e"
+  },
+  {
+    "index": 25,
+    "method": "hybrid",
+    "annotation_sha256": "29ee0263a526109d161f7d9d0c457ecee999004d2a3e525c1a1d2105c4420758"
+  },
+  {
+    "index": 26,
+    "method": "reference",
+    "annotation_sha256": "2579bb2b6e6e64e9669764e307f831cc2a97d7a4bfadb0983d0e31451bed1c97"
+  },
+  {
+    "index": 26,
+    "method": "opencv",
+    "annotation_sha256": "01a1a1113af1c510f9644de55fe93adb6daf17fffb489029fed4a81db0c2f46e"
+  },
+  {
+    "index": 26,
+    "method": "image25",
+    "annotation_sha256": "3ea828cb719abdc2062524f24ae49e6b1c305e3b8e9e33be780eec7a9df743be"
+  },
+  {
+    "index": 26,
+    "method": "hybrid",
+    "annotation_sha256": "79af54daa9d35126e9f809fcc2deda19c7d688b36c1f34ffc8ffbe83d636f76f"
+  },
+  {
+    "index": 27,
+    "method": "reference",
+    "annotation_sha256": "632885cab400168ff4b2600cf80a0833779143c0cb697eb961cc0cf61a3cb979"
+  },
+  {
+    "index": 27,
+    "method": "opencv",
+    "annotation_sha256": "ba959d94aded37285dbf08aefb28f43a97bac643a5cbe40ff3376ebd16ad573c"
+  },
+  {
+    "index": 27,
+    "method": "image25",
+    "annotation_sha256": "65c8b945d940d40b176c392309e697c2db6b207f8c9897c7ccbafac410a249fd"
+  },
+  {
+    "index": 27,
+    "method": "hybrid",
+    "annotation_sha256": "78926484cf1e0af9a6a5d523913412fa21e381951c1467fc60a413f162977970"
+  },
+  {
+    "index": 28,
+    "method": "reference",
+    "annotation_sha256": "12ef19072d343089d146e59c9cd74ce7d0b4d95fca3e9593365feff92a5feca3"
+  },
+  {
+    "index": 28,
+    "method": "opencv",
+    "annotation_sha256": "c9a72addb1c3d57b58575017fe9761a55058480a017c755d6dbec07fa55abac0"
+  },
+  {
+    "index": 28,
+    "method": "image25",
+    "annotation_sha256": "36e9db099efe73e5b2dab2a5575c77d8c99fea252470f4065e92568b0d47f368"
+  },
+  {
+    "index": 28,
+    "method": "hybrid",
+    "annotation_sha256": "74eb99917d1df97ae75432c43699dc63a019ce9f14447310cc0b4f2b08d98794"
+  },
+  {
+    "index": 29,
+    "method": "reference",
+    "annotation_sha256": "dbd46d314f9c172cc5fee8b3a802a86c333da1a3433fcaaadb44e54137188c7c"
+  },
+  {
+    "index": 29,
+    "method": "opencv",
+    "annotation_sha256": "83c18f2b65d61f5560c5d036cb829b5f44054291f8e1a7303d85894778408e30"
+  },
+  {
+    "index": 29,
+    "method": "image25",
+    "annotation_sha256": "4ab97eca7f3456c0ad5d576c7e1909a39052461174e14047abbef784b13311b2"
+  },
+  {
+    "index": 29,
+    "method": "hybrid",
+    "annotation_sha256": "51e6befe2376f74c7720bbca809fc9380db7e843911b8b5633dbb6471649e4e5"
+  },
+  {
+    "index": 30,
+    "method": "reference",
+    "annotation_sha256": "5f2e5b24b8a01f9e8e035353c6d07d0717e70b831e671fd36f6a3b4426ed1e06"
+  },
+  {
+    "index": 30,
+    "method": "opencv",
+    "annotation_sha256": "35addf516134fabad59477cc07ea3ba18af89cc99c94180f8ec617b4ccbe9094"
+  },
+  {
+    "index": 30,
+    "method": "image25",
+    "annotation_sha256": "08d23ec544dda949eed468ff75d367b5ce8b461ac56eb78a00f4f20f331a935b"
+  },
+  {
+    "index": 30,
+    "method": "hybrid",
+    "annotation_sha256": "6655f68bf9c0dceac6cc6d789f7749caefa23200cba536088b7453c9765e81f7"
+  },
+  {
+    "index": 31,
+    "method": "reference",
+    "annotation_sha256": "92d3c4fcbb3572a6e8f67393e38a8efcc0eea9aab807f6a8b789f7483eedc694"
+  },
+  {
+    "index": 31,
+    "method": "opencv",
+    "annotation_sha256": "faeba755d530d571c6881aef24a2bf7e75d7d0887e8a7d5eca9b185632686e39"
+  },
+  {
+    "index": 31,
+    "method": "image25",
+    "annotation_sha256": "75997b4403ee2ed62b381fbfd338fe3ee536b8cb22566e64502d584483c4c2b7"
+  },
+  {
+    "index": 31,
+    "method": "hybrid",
+    "annotation_sha256": "8c886cb157cc5a12ff2e44e3eb57685449bef92c4c392fb51774e4c317e281c3"
+  },
+  {
+    "index": 32,
+    "method": "reference",
+    "annotation_sha256": "cae44871fb73bc6dd2556c7469b213d515d3fd2a706615fabe1524bda23e08b6"
+  },
+  {
+    "index": 32,
+    "method": "opencv",
+    "annotation_sha256": "37e9bbdec9c3a0017e07cfecb344d62015d10d864c5656475523b9c49f493ac6"
+  },
+  {
+    "index": 32,
+    "method": "image25",
+    "annotation_sha256": "501f50bdb12029528edb07774b0391060524d3d9e5a64e3daf499782a937b80c"
+  },
+  {
+    "index": 32,
+    "method": "hybrid",
+    "annotation_sha256": "8406e719ea517e797378225586cf353999e3686a97faa6e72115428a2424916c"
+  },
+  {
+    "index": 33,
+    "method": "reference",
+    "annotation_sha256": "e15cb532725219937596e6adf22c7268a2b3f2b8e214307fcd80669f6bb3ef94"
+  },
+  {
+    "index": 33,
+    "method": "opencv",
+    "annotation_sha256": "7694a0f553165ecf256a048836281d5800d9af4d25c0fdb9ac1b8f18548ff340"
+  },
+  {
+    "index": 33,
+    "method": "image25",
+    "annotation_sha256": "f5caee33b8aa74cdd77658cee9a416589a419e3c758ad456e653c0defcd8af24"
+  },
+  {
+    "index": 33,
+    "method": "hybrid",
+    "annotation_sha256": "310ab17d91c2e2d4a87efbee155a127d9bbe9a5fb21dd3b1065b33ad5775ebe2"
+  },
+  {
+    "index": 34,
+    "method": "reference",
+    "annotation_sha256": "8c4cef8df2124a723c80c1cab682e8f1c19fa1edf163981db857622ca2a8073b"
+  },
+  {
+    "index": 34,
+    "method": "opencv",
+    "annotation_sha256": "c50b8c8d2d3a92fa8414e51e418b4d2c7ed7240a9139ad709f08a4f687d83fb7"
+  },
+  {
+    "index": 34,
+    "method": "image25",
+    "annotation_sha256": "1686423182dc2af698109823c35dd69c9f98eff7c81aca2d1db31f450364caa4"
+  },
+  {
+    "index": 34,
+    "method": "hybrid",
+    "annotation_sha256": "b8bc354a7032f48ac396edd616ed7728f30a62ecc9d465cd6bb93a48bb3aecb1"
+  },
+  {
+    "index": 35,
+    "method": "reference",
+    "annotation_sha256": "1a275132427602a419f2dec01cfb61082d2f9f0ae9c6d305b89a8dc1fbca1163"
+  },
+  {
+    "index": 35,
+    "method": "opencv",
+    "annotation_sha256": "ced9dfc4cb938ab553887fd17db87966ea6fc166dd273dc7659148b76ee7919a"
+  },
+  {
+    "index": 35,
+    "method": "image25",
+    "annotation_sha256": "a15d303506bbf9abaea548cfa32f664884c8b092c354113ef482b46347adafef"
+  },
+  {
+    "index": 35,
+    "method": "hybrid",
+    "annotation_sha256": "a9879df83898099e1163b61e09ab627a6c412c26eb34d32b79ee00de1f5502c6"
+  },
+  {
+    "index": 36,
+    "method": "reference",
+    "annotation_sha256": "03f2d97d7c3e06f2d1101e115d0f15201dcfd1bd5f484dece19a5c8099ab63dd"
+  },
+  {
+    "index": 36,
+    "method": "opencv",
+    "annotation_sha256": "df46f51950f6fd09c0f6a2d1c0c3c3a54be852ce16ef244fc89bfa669df032b6"
+  },
+  {
+    "index": 36,
+    "method": "image25",
+    "annotation_sha256": "2498e2461d44d7943d152cf72f532c0ae1e3e93eb1e6f42fd2b4120610891d6f"
+  },
+  {
+    "index": 36,
+    "method": "hybrid",
+    "annotation_sha256": "9b2606a6e1cf17bb43bc48c1f42311cc763a342d609a4865d20ac5ddf78b0fd8"
+  },
+  {
+    "index": 37,
+    "method": "reference",
+    "annotation_sha256": "0e21f3978c25d3c09f310b7472bd30c86d1d5ec5abe84be783585f223c22531e"
+  },
+  {
+    "index": 37,
+    "method": "opencv",
+    "annotation_sha256": "80b000a467ba52ce01b2f74927b0fd589e5ce387c218496d6281fc28cfaca02b"
+  },
+  {
+    "index": 37,
+    "method": "image25",
+    "annotation_sha256": "efc42a36b5d8ba376ab1b4217cd883911c763fa3e65d4bfabd3a85585a8ffad6"
+  },
+  {
+    "index": 37,
+    "method": "hybrid",
+    "annotation_sha256": "99a08baa7d44bc391d385cb4aea7c2f6b1f1aa7ae408612d508b4c0ccbbe3b72"
+  },
+  {
+    "index": 38,
+    "method": "reference",
+    "annotation_sha256": "ab3c116c4b3dafa4f3999a3a66c387f6905423512b9963c47967c34a1ae50c55"
+  },
+  {
+    "index": 38,
+    "method": "opencv",
+    "annotation_sha256": "223fb72085ee0827e70bef4e76aa2ae6112fed78a29fdaa45cb85495f6548efb"
+  },
+  {
+    "index": 38,
+    "method": "image25",
+    "annotation_sha256": "3c60a01e6c5c262132d9aff8a87a208c55008dd425c75a89a0dd5750fa7fce50"
+  },
+  {
+    "index": 38,
+    "method": "hybrid",
+    "annotation_sha256": "70b48b86d13e9f551ca415974bf35825e3ae15cec6e1c78baf9e5d4e086f2f87"
+  },
+  {
+    "index": 39,
+    "method": "reference",
+    "annotation_sha256": "59782dddfd3ce8602e42b8dfb3b250fa199640553100071ccc4ba9a75ea0248e"
+  },
+  {
+    "index": 39,
+    "method": "opencv",
+    "annotation_sha256": "30af2aa7f43f0f03f25e9a32b395bad76876ef1ab55a1c7efbf9a20b42be3490"
+  },
+  {
+    "index": 39,
+    "method": "image25",
+    "annotation_sha256": "573318a24f1bef78d12d22242dddd669bd95a92efd9b858574ed4e424f23da9c"
+  },
+  {
+    "index": 39,
+    "method": "hybrid",
+    "annotation_sha256": "201d055f4ad4a5bf98de83e54444887e764500a9c9f0ff1159b2f0626cd0f4c2"
+  },
+  {
+    "index": 40,
+    "method": "reference",
+    "annotation_sha256": "ec31f7d6fad7c592d0cef349bb22fb1b525b1325c650ec5a741f9e4f3f7bf0b8"
+  },
+  {
+    "index": 40,
+    "method": "opencv",
+    "annotation_sha256": "4ffe991907c25cad874e1f67ffb2567c90b2c6b0b5c0805702ababd07582c169"
+  },
+  {
+    "index": 40,
+    "method": "image25",
+    "annotation_sha256": "33c00feb61044fe4d117ad4be15a8af371642b89ff73b1888b6eb8c55e5b9f38"
+  },
+  {
+    "index": 40,
+    "method": "hybrid",
+    "annotation_sha256": "fa5e21593bdad27beeea7ce513bf310d99a4b66040f507402bb520539b953e7b"
+  },
+  {
+    "index": 41,
+    "method": "reference",
+    "annotation_sha256": "a9c9dc4681772a4f4bf5428b7849068853407bd1a9656de7bae25720489dcc7f"
+  },
+  {
+    "index": 41,
+    "method": "opencv",
+    "annotation_sha256": "3db59d85df9523ce8d70e4b879d050089d4f9272780a8cf1ab171f51150e0a6e"
+  },
+  {
+    "index": 41,
+    "method": "image25",
+    "annotation_sha256": "0f2ec88ca3c5f51372afa861d29dd359bb0165a9e82947770fc1c7faf04d420c"
+  },
+  {
+    "index": 41,
+    "method": "hybrid",
+    "annotation_sha256": "53298fe7b7ab332cd1fe7ed4a48bd0bde6f6980243484032df2f5d52459c85ff"
+  },
+  {
+    "index": 42,
+    "method": "reference",
+    "annotation_sha256": "cb75642b04bc769160636f17b5b67041af539c8accd1114501e2752a74937f83"
+  },
+  {
+    "index": 42,
+    "method": "opencv",
+    "annotation_sha256": "623f2aab2e2f7d827db8222254ea34338fb280f357403e0400af67d272ab2713"
+  },
+  {
+    "index": 42,
+    "method": "image25",
+    "annotation_sha256": "9d7c1ca710ff1f2c56077f2652f2edb5927c302cc522ed68c7f7c58973abea48"
+  },
+  {
+    "index": 42,
+    "method": "hybrid",
+    "annotation_sha256": "a0821d3c1ca5dc72868390bccf1db649a4b631fc59f3398957a47814c0e5def7"
+  },
+  {
+    "index": 43,
+    "method": "reference",
+    "annotation_sha256": "ad55f0379093d30cc408f6984ffd97e6ef1832f8397706ccceb6e36ee57cb103"
+  },
+  {
+    "index": 43,
+    "method": "opencv",
+    "annotation_sha256": "715f3fd548698b9669781b33d99cdf9daadc4764d526fa171b331834b22c46d6"
+  },
+  {
+    "index": 43,
+    "method": "image25",
+    "annotation_sha256": "e258f759250cfcc9e6d010416d4d0b44b24bd005bb2c673992c795e8dd6d93f3"
+  },
+  {
+    "index": 43,
+    "method": "hybrid",
+    "annotation_sha256": "f2010d0a2fbc455af29e0806e752fc1ffcd61ace053cd933ef65228ea998b5e4"
+  },
+  {
+    "index": 44,
+    "method": "reference",
+    "annotation_sha256": "cc4bbcb67c01e15c00ccb095786edc8b8c40e81825ee9a85756315dbd401fd2a"
+  },
+  {
+    "index": 44,
+    "method": "opencv",
+    "annotation_sha256": "810a0357d466a76d2f94b41f94c9bd8b27c757aafdeb7895be8560c0c94a5969"
+  },
+  {
+    "index": 44,
+    "method": "image25",
+    "annotation_sha256": "bd8447bb6aeabf683e171d98d51490d519fc24c06183be7c360fb1d55a2c5c52"
+  },
+  {
+    "index": 44,
+    "method": "hybrid",
+    "annotation_sha256": "c51b593590e563072625fdb0dfe97660379c0ae8e066b54d4bfc916edb741752"
+  },
+  {
+    "index": 45,
+    "method": "reference",
+    "annotation_sha256": "c00245d207b0ea512a8faba1da87de0c0d39695fe34909f562c3fe20b7b3c2e4"
+  },
+  {
+    "index": 45,
+    "method": "opencv",
+    "annotation_sha256": "9dedabed158c003adea8ae40daf044a1fcf315f1dc95fab68691a8fd12cd2cdc"
+  },
+  {
+    "index": 45,
+    "method": "image25",
+    "annotation_sha256": "ea640b6174a7da565e32a647db690cfe3510217730841fd33b89a2d05384649a"
+  },
+  {
+    "index": 45,
+    "method": "hybrid",
+    "annotation_sha256": "96d7a096045f140543fe570360709b3688fcfc94c6f7a9f50763c7e8304ae4cb"
+  },
+  {
+    "index": 46,
+    "method": "reference",
+    "annotation_sha256": "166d8c28afa3978385ffdcb30547e8cf8f7fbaf0b0410821dc3fa032095d6e21"
+  },
+  {
+    "index": 46,
+    "method": "opencv",
+    "annotation_sha256": "ee272b066a04c03f98456e5d5403bae9f28f2c841c887c812cce10f72032d0cb"
+  },
+  {
+    "index": 46,
+    "method": "image25",
+    "annotation_sha256": "a4bd8f87a5335f829f6a04df08f07c1cd45ad3431ebee36a6528fce998183724"
+  },
+  {
+    "index": 46,
+    "method": "hybrid",
+    "annotation_sha256": "fc9d841a41b7245cc53304525dd17b10f7d3aee53ec33535946dc03ac0a0d69e"
+  },
+  {
+    "index": 47,
+    "method": "reference",
+    "annotation_sha256": "3fe6b0faa68d1380c6788ee2edd9995cd2deb04944686695b72eb2bb87095524"
+  },
+  {
+    "index": 47,
+    "method": "opencv",
+    "annotation_sha256": "f4cda9fb265f6aa519d4b07a6a1e6156b1e8f481dfaefaffaba046d39c7ad424"
+  },
+  {
+    "index": 47,
+    "method": "image25",
+    "annotation_sha256": "a12ad117c51473acf37ee23b2dfbee1c923231491de4eb9f8c62aee1b14b963d"
+  },
+  {
+    "index": 47,
+    "method": "hybrid",
+    "annotation_sha256": "0deca7e52512dfdaa5e063ebde570b4f3caece0e5a6125e11f2019c1fc3679e5"
+  },
+  {
+    "index": 48,
+    "method": "reference",
+    "annotation_sha256": "7942ddc7e217101dd1045e5a098d04990ffd842ba451d18668e47cc974197cb1"
+  },
+  {
+    "index": 48,
+    "method": "opencv",
+    "annotation_sha256": "c7b984719f16c9646146bf8a3e43d7daaed1bd894ee82daa4033fc1a2361d14a"
+  },
+  {
+    "index": 48,
+    "method": "image25",
+    "annotation_sha256": "c65f971f8f8fdd6e9f40f1c4dc898c333d475d7b3e32049df5e4fad8e5b75037"
+  },
+  {
+    "index": 48,
+    "method": "hybrid",
+    "annotation_sha256": "3a467dd5a5425927833393044fd7800252a2fbf464c3e65f23523718d1d26cd9"
+  },
+  {
+    "index": 49,
+    "method": "reference",
+    "annotation_sha256": "cc74853f36e0a9f1fe43bec4a47a74f258279957aa7dc72ff497f650181f5813"
+  },
+  {
+    "index": 49,
+    "method": "opencv",
+    "annotation_sha256": "b15a8a401f094b99232352358be113b7c7d52121596ff9e76ae341765498968e"
+  },
+  {
+    "index": 49,
+    "method": "image25",
+    "annotation_sha256": "b8fd69152fe943eb36f916010106f2bd4830694496aa24d7bd680225a1356586"
+  },
+  {
+    "index": 49,
+    "method": "hybrid",
+    "annotation_sha256": "96f82ec1dd9d22e6b631b8f6057fbeebc150fe09b14e582469818e7fbc5e83b2"
+  }
+]

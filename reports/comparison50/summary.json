@@ -1,0 +1,81 @@
+{
+  "reference": "User-retained builtin50_litter_wall_20260928_v6 candidate labels, model-generated and revised with user feedback; not independent expert ground truth",
+  "boundary_tolerance_original_pixels": 2,
+  "missing_policy": "Missing instances are zero masks; macro instance scores set to zero",
+  "methods": {
+    "opencv": {
+      "available": 109,
+      "all_instances": {
+        "instances": 109,
+        "macro_iou": 0.3907546600708397,
+        "macro_dice": 0.5001485775622103,
+        "macro_precision": 0.4523019008158325,
+        "macro_recall": 0.7020254530786442,
+        "macro_boundary_f1": 0.3983275968289534,
+        "micro_iou": 0.30415897858507085,
+        "micro_dice": 0.4664446337900674
+      },
+      "common_available_instances": {
+        "instances": 105,
+        "macro_iou": 0.3794981124595105,
+        "macro_dice": 0.488599685262841,
+        "macro_precision": 0.4411762441445446,
+        "macro_recall": 0.6942929515581041,
+        "macro_boundary_f1": 0.39645934276421413,
+        "micro_iou": 0.24401718916265844,
+        "micro_dice": 0.39230517277161603
+      }
+    },
+    "image25": {
+      "available": 105,
+      "all_instances": {
+        "instances": 109,
+        "macro_iou": 0.4055664164098731,
+        "macro_dice": 0.507911825768558,
+        "macro_precision": 0.5407623236069761,
+        "macro_recall": 0.516603910816478,
+        "macro_boundary_f1": 0.48629607552946197,
+        "micro_iou": 0.4041644130344102,
+        "micro_dice": 0.5756653697853057
+      },
+      "common_available_instances": {
+        "instances": 105,
+        "macro_iou": 0.4210165656064398,
+        "macro_dice": 0.5272608477025983,
+        "macro_precision": 0.5613627930777181,
+        "macro_recall": 0.536284059799963,
+        "macro_boundary_f1": 0.5048216403115368,
+        "micro_iou": 0.48361352404013663,
+        "micro_dice": 0.6519400318260422
+      }
+    },
+    "hybrid": {
+      "available": 105,
+      "all_instances": {
+        "instances": 109,
+        "macro_iou": 0.4282827717451262,
+        "macro_dice": 0.5283416474165483,
+        "macro_precision": 0.5668515185416945,
+        "macro_recall": 0.5376978855433326,
+        "macro_boundary_f1": 0.4411488454370026,
+        "micro_iou": 0.41630082286287345,
+        "micro_dice": 0.587870622035471
+      },
+      "common_available_instances": {
+        "instances": 105,
+        "macro_iou": 0.44459830590684535,
+        "macro_dice": 0.5484689482705122,
+        "macro_precision": 0.5884458621051875,
+        "macro_recall": 0.5581816145164119,
+        "macro_boundary_f1": 0.4579545157393647,
+        "micro_iou": 0.49508801952376336,
+        "micro_dice": 0.6622861170159946
+      }
+    }
+  },
+  "hybrid_change": {
+    "improved_iou": 61,
+    "worse_iou": 31,
+    "unchanged_iou": 13
+  }
+}

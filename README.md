@@ -42,7 +42,7 @@ python test_geometry.py
 
 截至本次汇总：50张109实例，成功105，46张实例齐全，4个失败：25/ID2、27/ID1、30/ID1、39/ID1。两批累计152次请求，已知估算¥5.15，49次费用未知；不含00、04复用结果的原始请求与更早被舍弃试验。不是准确率，尚未专家验收，不可直接当作真值。
 
-`batch_local_first10_snapshot.py`保留首批代码，`run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。图片和生成结果未上传仓库。04人工视觉辅助精修不纳入纯API实验。
+`batch_local_first10_snapshot.py`保留首批代码，`run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。报告引用的图片和总mask已随HTML上传；其他中间结果保留在本地。04人工视觉辅助精修不纳入纯API实验。
 
 
 ## 可选 skill / OpenCV 精修（默认关闭）
@@ -73,4 +73,11 @@ python test_refine_save.py
 python test_comparison_metrics.py
 ```
 
-评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。图片与完整mask留在本地，不上传本仓库。
+评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。完整HTML报告、原图、叠加图及总mask现已放在 reports/comparison50/；逐实例中间结果保留在本地。
+
+
+## 可离线查看的完整报告
+
+[报告目录](reports/comparison50/) · [HTML](reports/comparison50/comparison.html)。下载仓库ZIP并解压后，用浏览器打开该HTML；GitHub文件页面显示HTML源码，不代表页面无法使用。本次未启用GitHub Pages。
+
+报告已补充四组mask的输入、方法、人工参与和限制，并提供每张的黑白mask链接。参考为多轮修订的候选标注，不是独立专家真值。
