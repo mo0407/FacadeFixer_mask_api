@@ -89,3 +89,10 @@ GitHub Pages 已启用，可直接用浏览器打开上方网址，也可以分�
 [报告目录](reports/comparison50/) · [HTML文件](reports/comparison50/comparison.html)
 
 下载仓库ZIP并解压后，用浏览器打开 `reports/comparison50/comparison.html`。GitHub仓库中的HTML文件页面显示源码，在线浏览请使用上方GitHub Pages网址。
+
+
+## 详细处理流程图
+
+[在线查看三种方法的流程图](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/workflows.html) · [Mermaid可编辑源码](WORKFLOWS.md)
+
+分别展示OpenCV类别分流、image2.5画布/原图坐标映射，以及API+OpenCV候选精修与异常回退。网页无需外部图表库，SVG可放大或下载。

@@ -1,4 +1,4 @@
-<section id="mask-methods">
+<section id="mask-methods"><p class="workflow-link"><a href="workflows.html">查看三种方法的详细处理流程图（输入、数据流、处理及异常分支）</a></p>
 <h2>四组 mask 分别是怎么得到的？</h2>
 <p>四组结果使用同一批50张原图，按原图尺寸保存黑白mask：白色为缺陷，黑色为背景。彩色图片是把mask叠加到原图后的展示，并不是模型直接生成的彩色标注图。每个实例按冻结的ID、bbox和类型对齐；总mask是实例mask的并集。</p>
 <table><tr><th>版本</th><th>输入</th><th>生成过程</th><th>人工参与与限制</th></tr>
