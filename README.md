@@ -1,5 +1,17 @@
 # FacadeFixer mask API
 
+
+## 实验过程与进度回顾
+
+**[在线查看实验回顾演示稿](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html)**
+
+记录50张图、109个缺陷实例的实验过程：参考标注迭代、三种mask方法、API失败重试、量化结果、改善与退化案例、费用记录及后续计划。
+
+方法说明旁附详细流程图；支持连续滚动、目录跳转、全屏、讲解备注，以及图片放大、缩放和拖动。方法二解释每一步的处理方式、原因与限制。图片已内嵌，也可[下载HTML](reports/experiment_recap/index.html)后离线查看。
+
+当前参考标注是用户多轮修订后保留的候选版本，并非独立专家真值；本演示稿整理已有实验，不新增模型请求。
+
+
 建筑缺陷分割实验：原图 + 冻结 bbox + 缺陷类型 → gpt-image-2.5 API → 原尺寸 mask、叠加图、JSON/RLE、耗时/token/估算费用。可在 VS Code 的 Python 终端运行。
 
 ## 运行
