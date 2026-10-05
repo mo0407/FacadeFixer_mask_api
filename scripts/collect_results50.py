@@ -1,7 +1,7 @@
 """Collect both batches without making API requests or changing original outputs."""
 import csv,json,shutil,html
 from pathlib import Path
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 def main():
  out=ROOT/'results50_gpt_image_2_5_vscode';out.mkdir(exist_ok=True)
  items=json.loads((ROOT/'input_manifest.json').read_text(encoding='utf-8-sig'))['images']

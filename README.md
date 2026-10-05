@@ -1,6 +1,31 @@
 # FacadeFixer mask API
 
 
+## 仓库目录与运行入口
+
+```text
+scripts/     API批处理、公共模块、离线精修与评估
+tests/       几何、批处理、精修与指标验证
+tools/       HTML演示稿和详细流程图生成工具
+skills/      可选OpenCV skill（独立使用）
+reports/     已发布的在线报告与实验演示稿
+evaluation/  保存的量化统计
+.vscode/     已更新路径的VS Code任务
+```
+
+从仓库根目录执行命令，例如 `python scripts/batch_local.py --start 0 --end 49 --output outputs_api50`。配置文件、原图和输出目录仍以仓库根目录为基准。测试示例：`python tests/test_geometry.py`。目录调整会改变代码指纹；已有批次请继续用原版本续跑，或为新版本使用新的输出目录。
+
+主要入口：
+
+- `scripts/batch_local.py`：当前推荐的API批处理。
+- `scripts/prepare_refine_input.py`、`scripts/refine_api_masks.py`：可选离线精修。
+- `scripts/compare_three_methods.py`：三种方法的评估。
+- `scripts/collect_results50.py`：历史50张实验汇总。
+- `scripts/run.py`：旧整图入口及公共工具；`scripts/batch_local_first10_snapshot.py`：历史首批快照，不推荐新批次使用。
+- `tools/build_experiment_recap.py`、`tools/build_workflow_diagrams.py`：重新生成报告页面。
+
+
+
 ## 实验过程与进度回顾
 
 **[在线查看实验回顾演示稿](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html)**
@@ -23,8 +48,8 @@ pip install -r requirements.txt
 Copy-Item models.example.json models.json
 Copy-Item input_manifest.example.json input_manifest.json
 $env:APINEBULA_API_KEY = '填写自己的密钥'
-python batch_local.py --start 0 --end 49 --output outputs_api50
-python batch_local.py --start 0 --end 49 --output outputs_api50 --run
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --run
 ```
 
 将原图放在 `images/`，或修改 manifest 的 image_path；编号0–49，示例包含50张的109个bbox与类别，不包含图片或参考mask。bbox为原图像素坐标 `[x1,y1,x2,y2]`，右下不包含。请从项目根目录执行。VS Code先选择Python解释器，再通过“终端 → 运行任务”运行。
@@ -42,10 +67,10 @@ API地址为 `https://apinebula.ai/v1/images/edits`；模型名为服务商提�
 ## 重试和验证
 
 ```powershell
-python batch_local.py --start 0 --end 49 --output outputs_api50 --run --retry-failed
-python batch_local.py --start 0 --end 49 --output outputs_api50 --review-only
-python test_local_batch.py
-python test_geometry.py
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --run --retry-failed
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --review-only
+python tests/test_local_batch.py
+python tests/test_geometry.py
 ```
 
 重复运行跳过已有记录，包括失败；显式retry-failed才重试，每实例本轮一次。程序不自动反复付费重试。不要并行运行两个批次到同一目录。异常退出后确认旧进程结束才可移除.running.lock；请求中断可能已扣费。配置或代码变化需新输出目录（指纹保护）。partial图片不是完整标注。
@@ -54,7 +79,7 @@ python test_geometry.py
 
 截至本次汇总：50张109实例，成功105，46张实例齐全，4个失败：25/ID2、27/ID1、30/ID1、39/ID1。两批累计152次请求，已知估算¥5.15，49次费用未知；不含00、04复用结果的原始请求与更早被舍弃试验。不是准确率，尚未专家验收，不可直接当作真值。
 
-`batch_local_first10_snapshot.py`保留首批代码，`run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。报告引用的图片和总mask已随HTML上传；其他中间结果保留在本地。04人工视觉辅助精修不纳入纯API实验。
+`scripts/batch_local_first10_snapshot.py`保留首批代码，`scripts/run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`scripts/collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。报告引用的图片和总mask已随HTML上传；其他中间结果保留在本地。04人工视觉辅助精修不纳入纯API实验。
 
 
 ## 可选 skill / OpenCV 精修（默认关闭）
@@ -63,11 +88,11 @@ python test_geometry.py
 
 ```powershell
 pip install -r requirements-refine.txt
-python prepare_refine_input.py --input outputs_api50/gpt_image_2_5_default --output API_RESULT_DIR
-python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR
-python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run
+python scripts/prepare_refine_input.py --input outputs_api50/gpt_image_2_5_default --output API_RESULT_DIR
+python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR
+python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run
 # 输入、参数不变时续跑
-python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run --resume
+python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run --resume
 ```
 
 先用prepare_refine_input.py将API模型子目录整理成相对images路径的独立输入；需要原图仍在原位置。本次collect_results50.py生成的汇总已经可直接作为精修输入。精修不会调用API，不覆盖原mask。详见 [精修说明](REFINEMENT.md)。
@@ -79,10 +104,10 @@ python refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run
 见 [量化报告](EVALUATION.md) 和 [统计文件](evaluation/summary.json)。参考来自用户保留的候选标注，未独立专家验收。全109实例宏IoU：OpenCV 0.3908、API 0.4056、混合0.4283；混合边界F1却比API下降，不宣称全面改善。
 
 ```powershell
-python compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
-python test_refine_api_masks.py
-python test_refine_save.py
-python test_comparison_metrics.py
+python scripts/compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
+python tests/test_refine_api_masks.py
+python tests/test_refine_save.py
+python tests/test_comparison_metrics.py
 ```
 
 评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。完整HTML报告、原图、叠加图及总mask现已放在 reports/comparison50/；逐实例中间结果保留在本地。

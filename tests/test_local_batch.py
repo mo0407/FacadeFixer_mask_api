@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
 """Offline validation of all 109 coordinate transforms; no API requests."""
 import io
 import numpy as np

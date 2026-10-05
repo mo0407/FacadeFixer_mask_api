@@ -3,7 +3,7 @@ from pathlib import Path
 from html import escape
 import json
 from PIL import ImageFont,Image,ImageDraw
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'comparison50_three_methods_v1'
 COLORS={'input':('#e0f2fe','#0284c7'),'process':('#f1f5f9','#475569'),'decision':('#fef3c7','#d97706'),'artifact':('#dcfce7','#16a34a'),'error':('#fee2e2','#dc2626')}
 def node(id,x,y,w,h,title,lines,kind='process'):return dict(id=id,x=x,y=y,w=w,h=h,title=title,lines=lines,kind=kind)

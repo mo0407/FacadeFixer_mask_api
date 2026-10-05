@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 import run as core
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 def prepare_local(original,d):
  w,h=original.size;x,y,X,Y=d['bbox_xyxy'];px=max(12,round((X-x)*.2));py=max(12,round((Y-y)*.025))
  roi=[max(0,x-px),max(0,y-py),min(w,X+px),min(h,Y+py)];a,b,A,B=roi;rw,rh=A-a,B-b

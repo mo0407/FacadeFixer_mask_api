@@ -4,7 +4,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 from PIL import Image
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 NAMES={'opencv':'OpenCV','image25':'image2.5','hybrid':'image2.5 + OpenCV'}
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def write(p,data):Path(p).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')

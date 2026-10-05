@@ -6,8 +6,8 @@
 
 ```powershell
 # 本机环境已安装OpenCV，其他环境先 pip install -r requirements-refine.txt
-& 'E:\ai\低空\venvs\facadefixer\Scripts\python.exe' -X utf8 refine_api_masks.py
-& 'E:\ai\低空\venvs\facadefixer\Scripts\python.exe' -X utf8 refine_api_masks.py --run
+& 'E:\ai\低空\venvs\facadefixer\Scripts\python.exe' -X utf8 scripts/refine_api_masks.py
+& 'E:\ai\低空\venvs\facadefixer\Scripts\python.exe' -X utf8 scripts/refine_api_masks.py --run
 ```
 
 首行只校验输入；第二行实际离线精修。50张包含105个可用实例、4个API失败实例，失败实例不补造mask，仍标记partial。若之后补齐API，应先重新执行collect_results50.py，再指定新的精修输出目录。
@@ -32,9 +32,9 @@
 ## 指定样本和续跑
 
 ```powershell
-python refine_api_masks.py --indices 17,29,47 --output outputs_refined_cracks_v1 --run
-python refine_api_masks.py --run --resume
-python test_refine_api_masks.py
+python scripts/refine_api_masks.py --indices 17,29,47 --output outputs_refined_cracks_v1 --run
+python scripts/refine_api_masks.py --run --resume
+python tests/test_refine_api_masks.py
 ```
 
 相同输入、参数和程序才能resume，跳过已有完成记录。输出已存在而不传resume会拒绝覆盖。异常退出遗留.running.lock时，确认旧进程停止后再移除锁。不要同时启动两个任务；改变代码、输入或范围应使用新输出目录。

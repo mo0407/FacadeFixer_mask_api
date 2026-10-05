@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,csv,base64,io,html
 from PIL import Image
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 REPORT=ROOT/'comparison50_three_methods_v1'
 if not REPORT.exists():REPORT=ROOT/'reports/comparison50'
 OUT=ROOT/'experiment_recap_20261005';OUT.mkdir(exist_ok=True)

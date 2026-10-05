@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
 """Synthetic offline tests; no image API or production output changes."""
 import tempfile
 from pathlib import Path

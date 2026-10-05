@@ -40,7 +40,7 @@ flowchart TD
 
 ## image2.5：局部画布 → 模型mask → 原图坐标
 
-对应 batch_local.py / local_crop_trial.py / api_adapter.py / run.py。VS Code只负责运行Python，不是分割模型。
+对应 scripts/batch_local.py / scripts/local_crop_trial.py / scripts/api_adapter.py / scripts/run.py。VS Code只负责运行Python，不是分割模型。
 
 ```mermaid
 flowchart TD
@@ -77,7 +77,7 @@ flowchart TD
 
 ## image2.5 + OpenCV：先验约束精修与回退
 
-对应 refine_api_masks.py。是可选后处理；与04号此前的人工轮廓辅助精修不同。
+对应 scripts/refine_api_masks.py。是可选后处理；与04号此前的人工轮廓辅助精修不同。
 
 ```mermaid
 flowchart TD

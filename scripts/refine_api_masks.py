@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 from PIL import Image,ImageDraw
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 COLORS=[(255,60,60),(0,190,255),(255,190,0),(180,60,255),(0,220,110),(255,80,190)]
 PARAMS={'version':'hybrid_auto_v1','band_fraction':0.025,'band_min':4,'band_max':32,'region_max_side':1200,'grabcut_iterations':4,'seed':20260929,'min_area_ratio':0.35,'max_area_ratio':2.5,'min_prior_iou':0.10}
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))

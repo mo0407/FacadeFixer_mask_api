@@ -8,7 +8,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/batch_local.py",
+        "${workspaceFolder}/scripts/batch_local.py",
         "--start",
         "0",
         "--end",
@@ -32,7 +32,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/batch_local.py",
+        "${workspaceFolder}/scripts/batch_local.py",
         "--start",
         "0",
         "--end",
@@ -57,7 +57,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/batch_local.py",
+        "${workspaceFolder}/scripts/batch_local.py",
         "--start",
         "0",
         "--end",
@@ -83,7 +83,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/batch_local.py",
+        "${workspaceFolder}/scripts/batch_local.py",
         "--start",
         "0",
         "--end",
@@ -108,7 +108,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/refine_api_masks.py",
+        "${workspaceFolder}/scripts/refine_api_masks.py",
         "--input",
         "${workspaceFolder}/API_RESULT_DIR",
         "--output",
@@ -126,7 +126,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/refine_api_masks.py",
+        "${workspaceFolder}/scripts/refine_api_masks.py",
         "--input",
         "${workspaceFolder}/API_RESULT_DIR",
         "--output",
@@ -145,7 +145,7 @@
       "args": [
         "-X",
         "utf8",
-        "${workspaceFolder}/refine_api_masks.py",
+        "${workspaceFolder}/scripts/refine_api_masks.py",
         "--input",
         "${workspaceFolder}/API_RESULT_DIR",
         "--output",

@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
 """Offline geometry checks; no network, no credentials, no paid request."""
 import io,tempfile
 from pathlib import Path

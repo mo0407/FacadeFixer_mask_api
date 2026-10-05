@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 import run as core
 import local_crop_trial as local
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 REUSE={0:'outputs_local_crop02',4:'outputs_local_crop_i04'}
 def make_input(it,d):
  original=Image.open(it['image_path']).convert('RGB');canvas,meta=local.prepare_local(original,d)
@@ -94,7 +94,7 @@ def main():
  root.mkdir(parents=True,exist_ok=True);lock=root/'.running.lock';fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY);os.close(fd)
  try:
   for folder in ['records','geometry','submitted_images','raw_model_outputs','raw_masks','instance_masks','unclipped_masks']:(root/folder).mkdir(exist_ok=True)
-  fp=core.api.digest(core.api.canonical([items,{k:v for k,v in model.items() if k not in ['key_file','api_key_env']},core.sha(__file__),core.sha(ROOT/'local_crop_trial.py'),core.sha(ROOT/'api_adapter.py')]))
+  fp=core.api.digest(core.api.canonical([items,{k:v for k,v in model.items() if k not in ['key_file','api_key_env']},core.sha(__file__),core.sha(ROOT/'scripts/local_crop_trial.py'),core.sha(ROOT/'scripts/api_adapter.py')]))
   cfg=root/'experiment.json'
   if cfg.exists():assert core.read(cfg)['fingerprint']==fp,'Changed experiment: use a new output directory'
   core.save(cfg,{'fingerprint':fp,'mode':'bbox_local_api_no_refinement','model':model['model'],'workers':args.workers,'reuse_candidates':REUSE})

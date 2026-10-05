@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
 import api_adapter as api
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 COLORS=[(255,60,60),(0,190,255),(255,190,0),(180,60,255),(0,220,110),(255,80,190)]
 DEFS={'C':'visible linear crack at actual width; exclude joints and shadows','M':'visible network of fine cracks; keep individual thin branches','P':'peeling coating/plaster including light curled flakes','S':'material loss including exposed grey mortar, brick, aggregate, rebar and cavities','T':'rust stain on the surface','R':'visible corrosion/rust','D':'surface contaminants; distinguish ground litter from wall stains using supplied subtype','V':'visible plant including fine leaves','L':'visible leakage deposit including white mineral efflorescence where present'}
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -71,7 +71,7 @@ def main():
   for m in models:
    root=out/m['id'];root.mkdir(exist_ok=True)
    for f in ['records','raw_model_outputs','instance_masks','unclipped_masks','scratch','submitted_images']:(root/f).mkdir(exist_ok=True)
-   fingerprint=api.digest(api.canonical([data,{k:v for k,v in m.items() if k not in ['key_file','api_key_env']},sha(__file__),sha(ROOT/'api_adapter.py')]))
+   fingerprint=api.digest(api.canonical([data,{k:v for k,v in m.items() if k not in ['key_file','api_key_env']},sha(__file__),sha(ROOT/'scripts/api_adapter.py')]))
    rp=root/'experiment.json'
    if rp.exists() and read(rp)['fingerprint']!=fingerprint:raise ValueError('Config/input changed: use a new --output directory')
    save(rp,{'fingerprint':fingerprint,'model':m['model'],'group_requested':m.get('group_requested'),'group_verified':False,'input_manifest_sha256':sha(args.manifest),'mode':'per_instance_full_frame','postprocess':'threshold, inverse canvas transform, bbox clipping only','pricing':m.get('pricing')})
