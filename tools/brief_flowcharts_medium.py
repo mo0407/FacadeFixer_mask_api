@@ -38,7 +38,7 @@ def diagrams():
  d.box(50,305,440,'裂缝类：寻找细暗线','调整线状区域，尽量贴合裂缝')
  d.box(550,305,440,'区域类：区分前景与背景','用API初稿引导区域分割')
  for x in [270,770]:d.arrow(f'M{x} 399 V429 H520 V459')
- d.box(220,462,600,'候选结果是否出现异常？','检查空mask、面积变化和与初稿的重合程度','#fff0d6')
+ d.box(180,462,680,'候选结果是否出现异常？','空mask／面积比＜0.35或＞2.50／与初稿IoU＜0.10','#fff0d6')
  d.arrow('M520 556 V581 H270 V622');d.arrow('M520 556 V581 H770 V622')
  d.text(270,609,'未触发异常',18);d.text(770,609,'异常或求解失败',18)
  d.box(50,625,440,'采用精修候选','作为该实例的最终mask','#e0f0eb')
@@ -54,8 +54,20 @@ def attach(slides,out):
  for key,svg in diagrams():
   (assets/(key+'.svg')).write_text(svg,encoding='utf8')
   src='data:image/svg+xml;base64,'+base64.b64encode(svg.encode('utf8')).decode()
-  figures.append(f'<figure class="brief-flow"><img src="{src}" alt="{key}处理流程：输入、分支与输出"><figcaption>点击可放大、缩放和拖动查看</figcaption></figure>')
+  figure=f'<figure class="brief-flow"><img src="{src}" alt="{key}处理流程：输入、分支与输出"><figcaption>点击可放大、缩放和拖动查看</figcaption></figure>'
+  if key=='image25':figure+=prompt_description()
+  if key=='hybrid':figure+=threshold_description()
+  figures.append(figure)
  title,body,note=slides[3];counter=iter(figures)
  body=re.sub(r'<p class="route">.*?</p>',lambda m:next(counter),body)
  slides[3]=(title,body,'补充主要数据流、类别分支、坐标还原与异常回退，省略具体参数和代码。')
 CSS='''.brief-flow{margin:14px 0 20px}.brief-flow img{display:block;width:100%;height:auto;background:none;cursor:zoom-in}.brief-flow figcaption{text-align:right;font-size:15px;margin:0;color:#62747b}.method{padding:16px 0 28px}.method>p{font-size:21px;margin:8px 0 18px}@media(max-width:760px){.brief-flow{overflow-x:auto}.brief-flow img{width:900px;max-width:none}.brief-flow figcaption{text-align:left}}'''
+
+def prompt_description():
+ template='''Return only a black/white binary mask of this EXACT 1024x1024 input canvas. White=specified visible defect, black=background. This canvas contains {panel_count} separate photo panels in reading order. Process each panel IN PLACE independently; do not combine, move, resize, extend or reconnect panels. All magenta padding MUST be black. Target class: {class_code} {class_description}. Target region coordinates on this submitted canvas: {target_bbox_canvas_list}. Follow actual visible defect boundaries; never fill rectangles. {optional_faint_tail}Do not select intact light wall, shadows or padding. No labels, margins, illustrations or text. Target ID: {target_id}. {optional_subtype_instruction}'''
+ return '''<h3>实际使用的 Prompt</h3><p>提示词要求：只返回黑白mask，按指定类型和位置选出可见缺陷；保持各局部面板的位置与形状，不把检测框直接填白，也不选中完好墙面、阴影或填充区。</p><details class="prompt-detail"><summary>展开英文提示词模板与动态字段</summary><pre>'''+html.escape(template)+'''</pre><p>上方是代码拼接逻辑的模板化展示，花括号会被每次请求的实际值替换，不是原样发送。</p><ul><li><code>panel_count</code>：画布中局部面板的数量；<code>target_bbox_canvas_list</code>：目标在上传画布中的坐标，不是原图坐标。</li><li><code>class_code / class_description</code>：缺陷类型及英文定义；<code>target_id</code>：实例编号。例如裂缝C使用 <code>visible linear crack at actual width; exclude joints and shadows</code>。</li><li><code>optional_faint_tail</code>：仅R、T、L类保留 <code>Keep faint tail only where visibly discolored. </code>，其他类不添加。</li><li><code>optional_subtype_instruction</code>：地面垃圾增加 <code>Select ground litter: discarded cloth, bags, masks, hangers and loose rubbish; exclude ground stains and wall dirt.</code>；墙面污渍增加 <code>Select wall staining only; exclude ground litter, shadows and intact wall.</code>；未指定这两种子类型时不添加。</li></ul><p class="muted">依据 local_crop_trial.py 与 batch_local.py 的提示词拼接逻辑整理，并核对已保存的 geometry.json 请求记录。提示词约束不能保证生成轮廓完全对齐。</p></details>'''
+
+def threshold_description():
+ return '''<h3>候选结果异常：如何判断？</h3><p>以API原mask为比较对象，以下任一条件触发时，回退到原API结果。</p><table class="thresholds"><thead><tr><th>检查项</th><th>触发回退的条件</th></tr></thead><tbody><tr><td>空结果</td><td>候选mask没有任何前景像素。</td></tr><tr><td>面积变化过大</td><td>候选面积 ÷ API原mask面积 <b>&lt; 0.35</b> 或 <b>&gt; 2.50</b>。</td></tr><tr><td>与初稿分歧过大</td><td>候选mask与API原mask的 <b>IoU &lt; 0.10</b>。</td></tr><tr><td>求解失败</td><td>精修求解出现异常，例如有效前景／背景种子不足。</td></tr></tbody></table><p class="muted">面积比恰好为0.35或2.50、IoU恰好为0.10时，不触发对应回退条件。若API原mask本身为空，直接保留空初稿，不进入精修。</p><p><b>注意：</b>这里的IoU比较“候选与API初稿”，不是与参考标注比较。阈值是本次程序的保护规则，不是质量合格线，也不是已验证的最优参数。裂缝对齐等人工复核提示不单独触发回退。</p>'''
+
+CSS+='''.prompt-detail{margin:18px 0;padding:18px 22px;border:1px solid #ccd6d1}.prompt-detail summary{cursor:pointer;font-size:21px;font-weight:600;color:#10796e}.prompt-detail pre{white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.7 Consolas,monospace;background:#eef2ee;padding:18px}.prompt-detail p,.prompt-detail li{font-size:19px;line-height:1.8}.prompt-detail li{margin:12px 0}code{overflow-wrap:anywhere}.thresholds{font-size:20px}.thresholds th{font-size:19px}.thresholds td{vertical-align:top}@media print{details::details-content{display:block}.prompt-detail pre{font-size:14px}}'''
