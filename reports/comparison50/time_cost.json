@@ -1,0 +1,25 @@
+{
+  "images": 50,
+  "opencv": {
+    "instances": 109,
+    "wall_seconds": 46.800070099998266,
+    "api_cost_cny": 0
+  },
+  "api": {
+    "instances_available": 105,
+    "attempts": 152,
+    "attempt_seconds_sum": 6545.393728799652,
+    "attempts_without_time": 0,
+    "known_cost_estimate_cny": 5.15,
+    "unknown_cost_attempts": 49,
+    "excluded_reused_instances": 2,
+    "wall_seconds": null,
+    "actual_charge": null
+  },
+  "hybrid": {
+    "instances_available": 105,
+    "additional_processing_seconds_sum": 58.98241639963817,
+    "additional_api_cost_cny": 0
+  },
+  "note": "API time is the sum of per-attempt total_seconds including retries, not elapsed batch wall time. Excludes original requests for two reused instances and earlier discarded trials. Hardware, energy and human review costs are excluded."
+}

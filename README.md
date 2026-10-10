@@ -5,7 +5,7 @@
 
 **[在线查看精简版报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_brief/index.html)**
 
-用9个主题梳理实验目的、过程、三种方法、完成进度、主要指标、按缺陷类型统计、典型案例与下一步。流程图保留类别分支、坐标还原和精修回退，省略具体参数与代码；支持图片放大和离线查看。
+用10个主题梳理实验目的、过程、三种方法、完成进度、主要指标、按缺陷类型统计、时间与费用、典型案例与下一步。流程图保留类别分支、坐标还原和精修回退，省略具体参数与代码；支持图片放大和离线查看。
 
 [详细版演示稿](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html) · [完整50张对比报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html) · [精简版HTML文件](reports/experiment_brief/index.html)
 
