@@ -54,7 +54,12 @@ def attach(slides,out):
  for key,svg in diagrams():
   (assets/(key+'.svg')).write_text(svg,encoding='utf8')
   src='data:image/svg+xml;base64,'+base64.b64encode(svg.encode('utf8')).decode()
-  figure=f'<figure class="brief-flow"><img src="{src}" alt="{key}处理流程：输入、分支与输出"><figcaption>点击可放大、缩放和拖动查看</figcaption></figure>'
+  summary={
+   'opencv':'根据缺陷类型，在检测框内用颜色、明暗和纹理规则直接筛选缺陷像素，生成mask。',
+   'image25':'将缺陷附近的局部图像和类型提示交给图像模型生成mask，再按记录的坐标放回原图。',
+   'hybrid':'以API生成的mask为初稿，结合原图像素进行局部精修，若候选结果触发异常规则则保留初稿。',
+  }[key]
+  figure=f'<p class="method-summary"><b>一句话理解：</b>{summary}</p><figure class="brief-flow"><img src="{src}" alt="{key}处理流程：输入、分支与输出"><figcaption>点击可放大、缩放和拖动查看</figcaption></figure>'
   if key=='image25':figure+=prompt_description()
   if key=='hybrid':figure+=threshold_description()
   figures.append(figure)
@@ -71,3 +76,4 @@ def threshold_description():
  return '''<h3>候选结果异常：如何判断？</h3><p>以API原mask为比较对象，以下任一条件触发时，回退到原API结果。</p><table class="thresholds"><thead><tr><th>检查项</th><th>触发回退的条件</th></tr></thead><tbody><tr><td>空结果</td><td>候选mask没有任何前景像素。</td></tr><tr><td>面积变化过大</td><td>候选面积 ÷ API原mask面积 <b>&lt; 0.35</b> 或 <b>&gt; 2.50</b>。</td></tr><tr><td>与初稿分歧过大</td><td>候选mask与API原mask的 <b>IoU &lt; 0.10</b>。</td></tr><tr><td>求解失败</td><td>精修求解出现异常，例如有效前景／背景种子不足。</td></tr></tbody></table><p class="muted">面积比恰好为0.35或2.50、IoU恰好为0.10时，不触发对应回退条件。若API原mask本身为空，直接保留空初稿，不进入精修。</p><p><b>注意：</b>这里的IoU比较“候选与API初稿”，不是与参考标注比较。阈值是本次程序的保护规则，不是质量合格线，也不是已验证的最优参数。裂缝对齐等人工复核提示不单独触发回退。</p>'''
 
 CSS+='''.prompt-detail{margin:18px 0;padding:18px 22px;border:1px solid #ccd6d1}.prompt-detail summary{cursor:pointer;font-size:21px;font-weight:600;color:#10796e}.prompt-detail pre{white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.7 Consolas,monospace;background:#eef2ee;padding:18px}.prompt-detail p,.prompt-detail li{font-size:19px;line-height:1.8}.prompt-detail li{margin:12px 0}code{overflow-wrap:anywhere}.thresholds{font-size:20px}.thresholds th{font-size:19px}.thresholds td{vertical-align:top}@media print{details::details-content{display:block}.prompt-detail pre{font-size:14px}}'''
+CSS+='''.method>.method-summary{border-left:4px solid #10796e;padding:10px 0 10px 18px;margin:16px 0 22px;font-size:23px;color:#17313d}'''
