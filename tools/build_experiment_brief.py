@@ -1,6 +1,7 @@
 """Build a concise local-only experiment recap from saved evidence."""
 from pathlib import Path
 import json,html,base64,io
+import csv
 from PIL import Image
 from recap_reading_layout import JS
 ROOT=Path(__file__).resolve().parent.parent
@@ -33,6 +34,28 @@ css='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;backgro
 from brief_flowcharts_medium import attach, CSS as FLOW_CSS
 attach(slides,OUT)
 css+=FLOW_CSS
+class_rows=list(csv.DictReader((REPORT/'classes.csv').read_text(encoding='utf-8-sig').splitlines()))
+instance_rows=list(csv.DictReader((REPORT/'instances.csv').read_text(encoding='utf-8-sig').splitlines()))
+names={'C':'裂缝','M':'网裂','P':'剥落','S':'破损','T':'锈迹','R':'腐蚀','D':'污染物','L':'渗漏／沉积物','V':'植物'}
+by_class={(r['method'],r['class_code']):r for r in class_rows}
+methods=['opencv','image25','hybrid'];class_table=[]
+for code in ['C','M','P','S','T','R','D','L','V']:
+ n=int(by_class['opencv',code]['instances']);scores=[float(by_class[m,code]['macro_iou']) for m in methods];cells=[]
+ for method,score in zip(methods,scores):
+  entries=[r for r in instance_rows if r['class_code']==code and r['method']==method]
+  assert len(entries)==n
+  assert abs(sum(float(r['iou']) for r in entries)/n-score)<1e-9
+  available=sum(r['missing'].lower()=='false' for r in entries)
+  bf1=float(by_class[method,code]['macro_boundary_f1'])
+  mark=' class="leading-iou"' if score==max(scores) else ''
+  cells.append(f'<td><span{mark}>IoU {score:.3f}</span><br><span class="class-secondary">边界F1 {bf1:.3f}<br>有输出 {available}/{n}</span></td>')
+ class_table.append(f'<tr><th scope="row">{names[code]} <small>{code}</small></th><td>{n}</td>'+''.join(cells)+'</tr>')
+assert sum(int(by_class['opencv',c]['instances']) for c in names)==109
+stats='''<p>按缺陷实例统计，而不是按图片统计；一张图片可以包含多种缺陷。每格列出区域重合度、边界贴合度和有输出的实例数。</p><div class="class-scroll"><table class="class-stats"><thead><tr><th>缺陷类型</th><th>实例数</th><th>OpenCV</th><th>image2.5</th><th>image2.5＋OpenCV</th></tr></thead><tbody>'''+''.join(class_table)+'''</tbody></table></div><p class="muted">绿色加粗仅标记该类最高平均IoU，不表示全面最优。有输出也不代表分割合格；缺失实例按0分计入均值。边界F1采用原图2像素容差。</p><p><b>主要观察：</b>混合方法在9类中的7类平均IoU最高，OpenCV在污染物和破损上最高。API初稿在9类中的7类边界F1最高，混合方法在裂缝和剥落上最高。</p><p><b>优先改进：</b>裂缝与网裂的三种方法平均IoU均低于0.18，仍是共同难点。</p><p class="muted">网裂、腐蚀、植物各仅3个实例，渗漏／沉积物仅2个，不能据此推广排名。污染物D合并墙面污渍与地面垃圾；类别沿用原始标注。所有指标比较的仍是未经独立专家验收的候选参考。</p>'''
+slides[6]=(slides[6][0].replace('06','07',1),slides[6][1],slides[6][2])
+slides[7]=(slides[7][0].replace('07','08',1),slides[7][1],slides[7][2])
+slides.insert(6,('06　每种缺陷的处理情况',stats,'来源：classes.csv与instances.csv，按类别、方法核对全部109个实例。IoU与边界F1为实例等权平均，缺失计0，不是检测分类准确率。'))
+css+='''.class-scroll{overflow-x:auto}.class-stats{font-size:20px;min-width:760px}.class-stats td,.class-stats th{padding:13px 12px;vertical-align:top}.class-stats tbody th{font-size:20px;color:#17313d}.class-secondary{font-size:16px;color:#62747b}.leading-iou{font-weight:700;color:#10796e}.class-stats small{font-size:15px;color:#62747b}.class-stats th:first-child{min-width:155px}'''
 body=''.join(f'<section class="slide" data-title="{html.escape(t.replace("<br>"," "),quote=True)}" data-note="{html.escape(n or "本页为已保存实验结果的精简总结。",quote=True)}"><h1>{t}</h1>{b}<footer>{i+1:02d} / {len(slides):02d}</footer></section>' for i,(t,b,n) in enumerate(slides))
 controls='<nav id="controls"><button id="prev">← 上一节</button><span id="count"></span><button id="next">下一节 →</button><select id="jump" aria-label="目录"></select><button id="noteButton">备注</button><button id="full">全屏</button><button id="print">打印</button></nav><div id="progress"></div><aside id="notes"></aside><dialog></dialog>'
 doc='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>外立面缺陷分割实验 · 精简回顾</title><style>'+css+'</style></head><body><main>'+body+'</main>'+controls+'<script>'+JS+'</script></body></html>'
