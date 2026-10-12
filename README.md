@@ -1,147 +1,98 @@
 # FacadeFixer mask API
 
+建筑外立面缺陷mask实验：原图＋固定检测框＋缺陷类型，生成原尺寸mask和叠加图，比较OpenCV、image2.5及API后精修。
 
-## 实验回顾：精简版（推荐先看）
-
-**[在线查看精简版报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_brief/index.html)**
-
-用10个主题梳理实验目的、过程、三种方法、完成进度、主要指标、按缺陷类型统计、时间与费用、典型案例与下一步。流程图保留类别分支、坐标还原和精修回退，省略具体参数与代码；支持图片放大和离线查看。
-
-[详细版演示稿](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html) · [完整50张对比报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html) · [精简版HTML文件](reports/experiment_brief/index.html)
-
-生成工具：`python tools/build_experiment_brief.py`。参考标注仍为多轮修订的候选版本，未经独立专家验收。
-
-
-
-## 仓库目录与运行入口
+## 代码与目录
 
 ```text
-scripts/     API批处理、公共模块、离线精修与评估
-tests/       几何、批处理、精修与指标验证
-tools/       HTML演示稿和详细流程图生成工具
-skills/      可选OpenCV skill（独立使用）
-reports/     已发布的在线报告与实验演示稿
-evaluation/  保存的量化统计
-.vscode/     已更新路径的VS Code任务
+scripts/         mask生成、API接口、几何处理与可选精修
+skills/          独立的OpenCV分割／精修skill
+tests/           几何、精修、保存和评价指标测试
+tools/           结果汇总、评价、HTML报告和流程图生成
+data/input/      本次50张原图及109个bbox／类型
+data/reference/  用户保留的参考标注、RLE和各级mask
+evaluation/      已保存的量化统计
+reports/         发布好的HTML报告与展示图片
 ```
 
-从仓库根目录执行命令，例如 `python scripts/batch_local.py --start 0 --end 49 --output outputs_api50`。配置文件、原图和输出目录仍以仓库根目录为基准。测试示例：`python tests/test_geometry.py`。目录调整会改变代码指纹；已有批次请继续用原版本续跑，或为新版本使用新的输出目录。
+生成mask的代码与生成报告的代码分开存放。所有命令从仓库根目录执行。
 
-主要入口：
-
-- `scripts/batch_local.py`：当前推荐的API批处理。
-- `scripts/prepare_refine_input.py`、`scripts/refine_api_masks.py`：可选离线精修。
-- `scripts/compare_three_methods.py`：三种方法的评估。
-- `scripts/collect_results50.py`：历史50张实验汇总。
-- `scripts/run.py`：旧整图入口及公共工具；`scripts/batch_local_first10_snapshot.py`：历史首批快照，不推荐新批次使用。
-- `tools/build_experiment_recap.py`、`tools/build_workflow_diagrams.py`：重新生成报告页面。
-
-
-
-## 实验过程与进度回顾
-
-**[在线查看实验回顾演示稿](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html)**
-
-记录50张图、109个缺陷实例的实验过程：参考标注迭代、三种mask方法、API失败重试、量化结果、改善与退化案例、费用记录及后续计划。
-
-方法说明旁附详细流程图；支持连续滚动、目录跳转、全屏、讲解备注，以及图片放大、缩放和拖动。方法二解释每一步的处理方式、原因与限制。图片已内嵌，也可[下载HTML](reports/experiment_recap/index.html)后离线查看。
-
-当前参考标注是用户多轮修订后保留的候选版本，并非独立专家真值；本演示稿整理已有实验，不新增模型请求。
-
-
-建筑缺陷分割实验：原图 + 冻结 bbox + 缺陷类型 → gpt-image-2.5 API → 原尺寸 mask、叠加图、JSON/RLE、耗时/token/估算费用。可在 VS Code 的 Python 终端运行。
-
-## 运行
+## 1. 准备环境与本次输入
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item models.example.json models.json
-Copy-Item input_manifest.example.json input_manifest.json
+Copy-Item data/input/manifest.json input_manifest.json
 $env:APINEBULA_API_KEY = '填写自己的密钥'
-python scripts/batch_local.py --start 0 --end 49 --output outputs_api50
-python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --run
 ```
 
-将原图放在 `images/`，或修改 manifest 的 image_path；编号0–49，示例包含50张的109个bbox与类别，不包含图片或参考mask。bbox为原图像素坐标 `[x1,y1,x2,y2]`，右下不包含。请从项目根目录执行。VS Code先选择Python解释器，再通过“终端 → 运行任务”运行。
+原图已包含在 `data/input/images/`，清单使用相对路径。编辑 `models.json` 设置自己的模型、地址、价格及可选代理；不要提交密钥。模板价格是历史实验配置，不代表当前报价。
 
-默认无参数选择10–49，是原实验后40张入口；新跑全部50张务必显式传入0–49。每个bbox一次请求，默认串行；不重新检测，不使用参考mask或OpenCV轮廓精修。未提供历史输出时不会复用00、04。
-
-API地址为 `https://apinebula.ai/v1/images/edits`；模型名为服务商提供的 `gpt-image-2.5`，不代表独立验证其底层身份。group_requested仅记录请求分组，不能据此保证服务商路由。需要代理时，在模型配置增加 `proxy`，例如 `http://127.0.0.1:7897`；模板未绑定本机代理。
-
-## 方法与限制
-
-按bbox加上下文裁剪，宽高比超过3时沿长边分4段拼为2×2；等比映射到1024方形画布。返回二值mask经记录的坐标映射还原，最近邻缩放，并裁到冻结bbox内。保留原始返回、实际输入、变换、裁框前mask与最终mask。原尺寸一致不保证模型边界准确；裂缝偏移、空腔漏选、碎片化需要人工审查。
-
-输出目录中 `review.html` 查看结果，`masks/` 为总mask，`instance_masks/` 为独立实例，`overlays/` 为彩色叠加，`annotations/` 为JSON及列优先RLE，`metrics.csv` 为单张最新记录，`records/` 的attempts保留重试历史。unknown/null不是0，汇总估算费用不等于账单。配置价格仅为实验时用户提供的¥0.05/次，请按实际平台计价更新。细分类可选class_subtype，例如GroundLitter、WallStain。
-
-## 重试和验证
+## 2. 生成mask
 
 ```powershell
+# 先检查输入，不请求API
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50
+# 正式调用，会产生API费用
+python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --run
+# 仅重试失败实例
 python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --run --retry-failed
+# 只更新结果预览
 python scripts/batch_local.py --start 0 --end 49 --output outputs_api50 --review-only
-python tests/test_local_batch.py
-python tests/test_geometry.py
 ```
 
-重复运行跳过已有记录，包括失败；显式retry-failed才重试，每实例本轮一次。程序不自动反复付费重试。不要并行运行两个批次到同一目录。异常退出后确认旧进程结束才可移除.running.lock；请求中断可能已扣费。配置或代码变化需新输出目录（指纹保护）。partial图片不是完整标注。
+每个bbox一次请求，不重新检测，不读取参考mask。输出包含独立实例mask、整图mask、类别mask、叠加图、JSON/RLE及耗时/token/估算费用。生成图尺寸正确不代表边缘准确，仍需复核。未知费用和token不等于0。不要同时向同一输出目录运行两个批次；代码或配置变化请使用新目录，保留原版本用于旧批次续跑。
 
-## 本次50张实验
-
-截至本次汇总：50张109实例，成功105，46张实例齐全，4个失败：25/ID2、27/ID1、30/ID1、39/ID1。两批累计152次请求，已知估算¥5.15，49次费用未知；不含00、04复用结果的原始请求与更早被舍弃试验。不是准确率，尚未专家验收，不可直接当作真值。
-
-`scripts/batch_local_first10_snapshot.py`保留首批代码，`scripts/run.py`为旧整图入口兼公共工具，当前推荐batch_local.py。`scripts/collect_results50.py`仅用于汇总原实验的first10及remaining40目录，复制图片并生成独立本地对比页；它不调用API。报告引用的图片和总mask已随HTML上传；其他中间结果保留在本地。04人工视觉辅助精修不纳入纯API实验。
-
-
-## 可选 skill / OpenCV 精修（默认关闭）
-
-纯API执行命令保持不变，不需要安装skill或OpenCV。需要精修时另行选择：
+### 纯OpenCV基线与可选精修
 
 ```powershell
 pip install -r requirements-refine.txt
+python skills/facade-opencv-mask/scripts/segment.py --manifest data/input/manifest.json --output outputs_opencv50
 python scripts/prepare_refine_input.py --input outputs_api50/gpt_image_2_5_default --output API_RESULT_DIR
 python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR
 python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run
-# 输入、参数不变时续跑
+# 输入、代码、参数不变时续跑
 python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_DIR --run --resume
 ```
 
-先用prepare_refine_input.py将API模型子目录整理成相对images路径的独立输入；需要原图仍在原位置。本次collect_results50.py生成的汇总已经可直接作为精修输入。精修不会调用API，不覆盖原mask。详见 [精修说明](REFINEMENT.md)。
+模型输出目录名取决于配置中的模型ID。精修默认关闭，不新增API调用，不覆盖原mask。skill可独立安装，不安装也能在Python终端运行脚本。详见[精修说明](REFINEMENT.md)和[mask代码说明](scripts/README.md)。
 
-`skills/facade-opencv-mask`是可选Codex skill，可自行安装到个人skills目录；不安装也可直接运行Python代码。Python终端不会自动执行SKILL.md。独立skill内含纯OpenCV segment.py、辅助guided.py和自动后处理refine_api_masks.py，分别区分bbox基线、人工引导、模型mask后处理。额外视觉引导不混入自动基线。
+## 3. 本次输入与参考真值
 
-## 三方法评估
+[数据目录及说明](data/README.md) · [输入清单](data/input/manifest.json) · [参考标注](data/reference/annotations/) · [数据校验信息](data/dataset.json)
 
-见 [量化报告](EVALUATION.md) 和 [统计文件](evaluation/summary.json)。参考来自用户保留的候选标注，未独立专家验收。全109实例宏IoU：OpenCV 0.3908、API 0.4056、混合0.4283；混合边界F1却比API下降，不宣称全面改善。
+包含50张原图、109个固定实例和对应参考mask。参考版本为 `builtin50_litter_wall_20260928_v6`：模型生成后经用户多轮修订保留，**不是独立专家真值**。原图和mask字节保持不变，机器绝对路径已改为相对路径。输入清单只含原图、bbox、类别及可选子类型；参考mask只用于评价。
+
+## 4. 评价与测试
 
 ```powershell
-python scripts/compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
+python tools/compare_three_methods.py --reference data/reference --opencv outputs_opencv50 --image25 API_RESULT_DIR --hybrid NEW_REFINED_DIR --output NEW_COMPARISON_DIR
+python tests/test_dataset.py
+python tests/test_geometry.py
+python tests/test_local_batch.py
 python tests/test_refine_api_masks.py
 python tests/test_refine_save.py
 python tests/test_comparison_metrics.py
 ```
 
-评估按原图哈希、实例ID、类别和bbox对齐，包含缺失按0分及共同可用子集两个统计口径；生成可离线分享的原图+参考+三方法对比页。输入为各程序输出根目录。评估只读取结果，不影响分割。完整HTML报告、原图、叠加图及总mask现已放在 reports/comparison50/；逐实例中间结果保留在本地。
+统计按原图哈希、实例ID、bbox和类别对齐。既报告缺失计0分的全部实例，也报告共同有输出的实例；指标表示与候选参考的一致度。参考不用于精修调参。详见[评价说明](EVALUATION.md)。
 
+## 报告与展示
 
-## 在线查看完整报告
+- **[精简版实验报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_brief/index.html)**：方法、流程图、分类统计、时间费用和结论。
+- [详细实验回顾](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_recap/index.html)：迭代过程、案例和实现说明。
+- [完整50张对比报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html)：逐图对比参考、OpenCV、API和精修结果。
+- [详细处理流程图](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/workflows.html) · [Mermaid源码](WORKFLOWS.md)。
 
-**[在线查看50张缺陷分割对比报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/comparison.html)**
+截至当前记录：API及混合方法105／109实例有输出，46／50张实例齐全。缺失4项，不代表无缺陷。报告可在线浏览，也可下载仓库后打开HTML。
 
-GitHub Pages 已启用，可直接用浏览器打开上方网址，也可以分享给其他人，无需下载文件。
+### 重新生成报告
 
-报告包含原图、参考标注、OpenCV、image2.5、image2.5＋OpenCV的对比，并说明四组mask的生成方法，提供原尺寸黑白mask及IoU、Dice、精确率、召回率和边界F1。参考标注是多轮修订的候选版本，并非独立专家真值。
+```powershell
+python tools/build_experiment_brief.py
+python tools/build_experiment_recap.py
+```
 
-### 离线查看
-
-[报告目录](reports/comparison50/) · [HTML文件](reports/comparison50/comparison.html)
-
-下载仓库ZIP并解压后，用浏览器打开 `reports/comparison50/comparison.html`。GitHub仓库中的HTML文件页面显示源码，在线浏览请使用上方GitHub Pages网址。
-
-
-## 详细处理流程图
-
-[在线查看三种方法的流程图](https://mo0407.github.io/FacadeFixer_mask_api/reports/comparison50/workflows.html) · [Mermaid可编辑源码](WORKFLOWS.md)
-
-分别展示OpenCV类别分流、image2.5画布/原图坐标映射，以及API+OpenCV候选精修与异常回退。网页无需外部图表库，SVG可放大或下载。
+报告工具说明见[tools/README.md](tools/README.md)。生成新的三方法比较请使用上面的评价命令；`collect_results50.py`仅针对原实验两批目录。报告展示所需的历史图片仍保留原路径，既有在线链接不变。

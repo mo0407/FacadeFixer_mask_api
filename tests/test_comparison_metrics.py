@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 import numpy as np
 from compare_three_methods import scores,aggregate
 a=np.zeros((30,30),bool);a[5:15,5:15]=True

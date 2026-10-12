@@ -34,7 +34,7 @@ def csvout(p,rows):
  if rows:
   with p.open('w',encoding='utf-8-sig',newline='') as f:w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--reference',default=str(ROOT.parent/'builtin50_litter_wall_20260928_v6'));p.add_argument('--opencv',default=str(ROOT.parent/'opencv50_bbox_20260928/results'));p.add_argument('--image25',default=str(ROOT/'results50_gpt_image_2_5_vscode'));p.add_argument('--hybrid',default=str(ROOT/'outputs_refined50_v1'));p.add_argument('--output',default=str(ROOT/'comparison50_three_methods_v1'));args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--reference',default=str(ROOT/'data/reference'));p.add_argument('--opencv',default=str(ROOT.parent/'opencv50_bbox_20260928/results'));p.add_argument('--image25',default=str(ROOT/'results50_gpt_image_2_5_vscode'));p.add_argument('--hybrid',default=str(ROOT/'outputs_refined50_v1'));p.add_argument('--output',default=str(ROOT/'comparison50_three_methods_v1'));args=p.parse_args()
  roots={k:Path(getattr(args,k)).resolve() for k in ['reference',*NAMES]};out=Path(args.output).resolve()
  if out.exists():p.error('Use a new output directory; preserve earlier comparisons')
  if any(out==v or out in v.parents or v in out.parents for v in roots.values()):p.error('Output must be separate from inputs')
@@ -50,7 +50,7 @@ def main():
    for folder in ['raw_instance_masks','candidate_instance_masks']:shutil.copytree(root/folder,dest/folder)
  rows=[];image_rows=[];provenance=[];cards=[]
  for name,refa in sorted(anns['reference'].items(),key=lambda item:item[1]['image_index']):
-  idx=refa['image_index'];shape=(refa['height'],refa['width']);source=roots['reference']/'images'/name;assert sha(source)==refa['source_sha256'];shutil.copy2(source,out/'images'/name)
+  idx=refa['image_index'];shape=(refa['height'],refa['width']);source=roots['reference']/refa.get('source_path', 'images/'+name);assert sha(source)==refa['source_sha256'];shutil.copy2(source,out/'images'/name)
   maps={k:{d['id']:d for d in a[name]['defects']} for k,a in anns.items()};refmap=maps['reference'];common=set(refmap).intersection(*(set(maps[k]) for k in NAMES))
   unions={k:np.zeros(shape,bool) for k in roots}
   for key in roots:
@@ -96,6 +96,6 @@ def main():
  doc='''<!doctype html><meta charset="utf-8"><title>三种方法与参考真值对比</title><style>body{font:15px system-ui;background:#eee;margin:24px}section{background:white;padding:12px;margin:18px 0}.panels{display:flex}figure{flex:1;min-width:0;margin:5px}img{width:100%;height:380px;object-fit:contain}table{border-collapse:collapse;background:white}td,th{border:1px solid #ccc;padding:10px}h2{font-size:17px}</style><h1>OpenCV / image2.5 / image2.5+OpenCV 与参考标注</h1><p>参考为用户保留的v6候选标注，并非独立专家真值；以下指标是与该参考的一致度。全部109实例中，API与混合方法缺失4个，缺失按0分计。共同105列用于排除请求失败影响。固定bbox/类型/id匹配，未用参考mask调整分割。</p><p>IoU=交集/并集；Dice=2交集/两者面积和；精确率衡量误选，召回率衡量漏选；边界F1使用原图2像素容差。均值按实例等权，越高越贴合参考；不会用大量背景像素抬高准确率。</p>'''+table+'<p><a href="instances.csv">逐实例</a> · <a href="images.csv">逐图总mask</a> · <a href="classes.csv">按类别</a> · <a href="refinement_changes.csv">精修增减排序</a> · <a href="summary.json">完整汇总（含微平均）</a></p>'+''.join(cards)
  import re
  doc=re.sub(r'(<a href="((?:reference|opencv|image25|hybrid)/overlays/[^"<>]+)">.*?</a>)',lambda m:m.group(1)+'<p><a href="'+m.group(2).replace('/overlays/','/masks/')+'">黑白mask（原尺寸）</a></p>',doc,flags=re.S)
- doc=doc.replace('<section id="i00">',(ROOT/'MASK_METHODS.html').read_text(encoding='utf-8')+'<section id="i00">')
+ doc=doc.replace('<section id="i00">',(ROOT/'tools/templates/MASK_METHODS.html').read_text(encoding='utf-8')+'<section id="i00">')
  (out/'comparison.html').write_text(doc,encoding='utf-8');print(json.dumps(summary,ensure_ascii=False))
 if __name__=='__main__':main()

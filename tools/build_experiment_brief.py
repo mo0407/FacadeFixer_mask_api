@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parent.parent
 REPORT=ROOT/'reports/comparison50'
 OUT=ROOT/'reports/experiment_brief';OUT.mkdir(exist_ok=True)
 summary=json.loads((REPORT/'summary.json').read_text(encoding='utf8'))
-anns={a['image_index']:a for p in (REPORT/'reference/annotations').glob('*.json') for a in [json.loads(p.read_text(encoding='utf8'))]}
+anns={a['image_index']:a for p in ((REPORT/'reference/annotations') if (REPORT/'reference/annotations').exists() else ROOT/'data/reference/annotations').glob('*.json') for a in [json.loads(p.read_text(encoding='utf8'))]}
 def image(index,kind):
  a=anns[index];p=REPORT/kind/a['overlay_path']
  with Image.open(p) as im:

@@ -1,0 +1,411 @@
+{
+  "images": 50,
+  "instances": 109,
+  "reference_version": "builtin50_litter_wall_20260928_v6",
+  "reference_status": "user-retained candidate; not independently expert validated",
+  "input_manifest": "input/manifest.json",
+  "reference_annotations": "reference/annotations",
+  "records": [
+    {
+      "index": 0,
+      "file_name": "civil_001090_DJI_20240802073149_0238_V_0.jpg",
+      "sha256": "d2e9dce736e013681b66156876aff46d88e9b55243ba8e3fa0f6046a3381678f",
+      "width": 171,
+      "height": 2077,
+      "instances": 1
+    },
+    {
+      "index": 1,
+      "file_name": "civil_001250_DJI_20240802070758_0022_V_2.jpg",
+      "sha256": "6420a06151880d57e8d5cb1ff668ae46a58b70c3da232a8bbc4f9a1f4a3a1157",
+      "width": 681,
+      "height": 877,
+      "instances": 2
+    },
+    {
+      "index": 2,
+      "file_name": "civil_001486_DJI_20230802074612_0171_V_2.jpg",
+      "sha256": "35e34cc3a0a86d38ab4fe09d4326bcb794baaebbb53cd4c16089fd74f4c0709a",
+      "width": 650,
+      "height": 431,
+      "instances": 2
+    },
+    {
+      "index": 3,
+      "file_name": "civil_001596_DJI_20240716121153_1349_V_0.jpg",
+      "sha256": "07a84f2273da2e06acadf6727189f70855e06cf08daa2e5e31d619c31cccd0d4",
+      "width": 360,
+      "height": 430,
+      "instances": 2
+    },
+    {
+      "index": 4,
+      "file_name": "civil_001790_DJI_20240802075055_0076_V_22.jpg",
+      "sha256": "39062b3a4dabe8607dc0bea207b878cd70db3bfbb3fbc54dd8fbff3e865f080d",
+      "width": 611,
+      "height": 616,
+      "instances": 1
+    },
+    {
+      "index": 5,
+      "file_name": "civil_002357_DJI_20240821091230_0262_V_0.jpg",
+      "sha256": "70536783ab2d382dd94120f3bffb02cd3f531e1b385a048ab71e859ce232c708",
+      "width": 248,
+      "height": 627,
+      "instances": 3
+    },
+    {
+      "index": 6,
+      "file_name": "civil_002484_DJI_20240621111104_0058_V_3.jpg",
+      "sha256": "42a9b2991b2c86820aebe0b580d98991d079c4a0d2c48a6b920beb296c508e46",
+      "width": 417,
+      "height": 555,
+      "instances": 1
+    },
+    {
+      "index": 7,
+      "file_name": "civil_002621_DJI_20240624094533_0266_V_13.jpg",
+      "sha256": "c4522d8dad9f232d26923f49eb3ffecd50a65097fc6e524b18565cdbee8caa72",
+      "width": 231,
+      "height": 403,
+      "instances": 4
+    },
+    {
+      "index": 8,
+      "file_name": "civil_002711_DJI_20240624112525_0581_V_3.jpg",
+      "sha256": "edb5921491f97863b3e11e0765b3bfdb62a76eb7205da7fe7e1ee1a497addb40",
+      "width": 581,
+      "height": 1352,
+      "instances": 1
+    },
+    {
+      "index": 9,
+      "file_name": "civil_003065_DJI_20240808110906_0272_V_10.jpg",
+      "sha256": "49b1a13f3b7086f2381f304e0740aecb247cc575beddec7961be0f96e0a490b8",
+      "width": 141,
+      "height": 825,
+      "instances": 1
+    },
+    {
+      "index": 10,
+      "file_name": "civil_003293_DJI_20240429094033_0178_V_0.jpg",
+      "sha256": "f5afca2ebc76c09b662dc63a9a735395a692b5c633a6f9dbe5479051ae6b35f4",
+      "width": 751,
+      "height": 296,
+      "instances": 1
+    },
+    {
+      "index": 11,
+      "file_name": "civil_003385_DJI_20230830092039_0013_V_1.jpg",
+      "sha256": "f5d330c57622ae952ff55eddf70c35ae8486b3467ef96b6a1561a21a4c579648",
+      "width": 351,
+      "height": 505,
+      "instances": 1
+    },
+    {
+      "index": 12,
+      "file_name": "civil_003585_DJI_20240709110337_0005_V_0.jpg",
+      "sha256": "814a033cf57bb34c3b81860d2436796f08a013662616cd232aaa119ca7538065",
+      "width": 193,
+      "height": 758,
+      "instances": 1
+    },
+    {
+      "index": 13,
+      "file_name": "civil_003656_DJI_20240528105657_0529_V_4.jpg",
+      "sha256": "eb00d8f5be9327a0ced90eeff4d420ceaf9bd995e17947dbbca85718bc1d674b",
+      "width": 699,
+      "height": 514,
+      "instances": 3
+    },
+    {
+      "index": 14,
+      "file_name": "civil_004617_DJI_20240624110822_0050_V_12.jpg",
+      "sha256": "720ecea07a53c2f266bd024813eda770ad05686501e4220225045513cbee257d",
+      "width": 382,
+      "height": 672,
+      "instances": 4
+    },
+    {
+      "index": 15,
+      "file_name": "civil_004688_DJI_20240624094746_0399_V_2.jpg",
+      "sha256": "028888566037981796033a13bc0b255742feddb0d6c67c44ffdfd77bac3373e2",
+      "width": 864,
+      "height": 1277,
+      "instances": 6
+    },
+    {
+      "index": 16,
+      "file_name": "civil_004768_DJI_20240624111853_0248_V_11.jpg",
+      "sha256": "75eb6ccf7142f293a2389c8d125cb596128522ef188f24b385308473ac040ea4",
+      "width": 439,
+      "height": 659,
+      "instances": 6
+    },
+    {
+      "index": 17,
+      "file_name": "civil_004839_DJI_20240821105343_0720_V_8.jpg",
+      "sha256": "010d1dfb804f2f8f99a2d31c3ee6605e8f8fb527d7840314ce97555fe304c5ea",
+      "width": 314,
+      "height": 409,
+      "instances": 1
+    },
+    {
+      "index": 18,
+      "file_name": "civil_004995_DJI_20230905084649_0029_V_5.jpg",
+      "sha256": "76f11bd3bbec6fccfa795f3d929af5cb0676aae06a2e13c8ed84286781419842",
+      "width": 712,
+      "height": 795,
+      "instances": 6
+    },
+    {
+      "index": 19,
+      "file_name": "civil_005042_DJI_20240627104808_0411_V_14.jpg",
+      "sha256": "45c931adee2978d28505f19c34456b95e909b8333e3ab1b0ffd52ae4ba7adfc1",
+      "width": 989,
+      "height": 365,
+      "instances": 3
+    },
+    {
+      "index": 20,
+      "file_name": "civil_005329_DJI_20230814091833_0079_V_14.jpg",
+      "sha256": "e6a882b77e04c5a23b4c708de03dbf83c42d7268c54552670f395a566f59b331",
+      "width": 405,
+      "height": 321,
+      "instances": 2
+    },
+    {
+      "index": 21,
+      "file_name": "civil_005562_DJI_20230802073945_0074_V_28.jpg",
+      "sha256": "f18dbf2bd4f68a3869df95672938f0fbe3421f40e14a3d2f1189611e67d16f26",
+      "width": 521,
+      "height": 887,
+      "instances": 5
+    },
+    {
+      "index": 22,
+      "file_name": "civil_006001_DJI_20240612155222_0081_V_16.jpg",
+      "sha256": "8940929aaf19fd32f35c8cd5653d68d7182482340aff4ed66b1a5117734d9dd8",
+      "width": 360,
+      "height": 1070,
+      "instances": 7
+    },
+    {
+      "index": 23,
+      "file_name": "open_001918_istockphoto-484578825-612x612_jpg.rf.1f366a5098a2cc9aaa7de26930c58fe8.jpg",
+      "sha256": "2c71327e6ff1260625a44752440eb5268ec36385dbce4a256586d56c3bc967b6",
+      "width": 416,
+      "height": 416,
+      "instances": 1
+    },
+    {
+      "index": 24,
+      "file_name": "open_001967_cls05_334.jpg",
+      "sha256": "e8d9e89bedae428fe233bdd7ce9c0f7d303b3a884f31c9c8b0f9685dcc7be448",
+      "width": 512,
+      "height": 512,
+      "instances": 2
+    },
+    {
+      "index": 25,
+      "file_name": "open_002104_cls05_238.jpg",
+      "sha256": "405a26f33c9199289d7cc803896adf529dfff9292ef44bd102544877cbf7270c",
+      "width": 512,
+      "height": 512,
+      "instances": 3
+    },
+    {
+      "index": 26,
+      "file_name": "open_002597_cls05_394.jpg",
+      "sha256": "af630807a67b5ea32fb81cdd8f6feb3fe7de062aec2a3dccba20fa08e557abfa",
+      "width": 512,
+      "height": 512,
+      "instances": 2
+    },
+    {
+      "index": 27,
+      "file_name": "open_004007_istockphoto-1095690108-612x612_jpg.rf.350e9c0c4f34e155c10eeb60607b5436.jpg",
+      "sha256": "74cedddb856bab75842725b1cf2b2236a7a5bf29aa0a8e06e3fab885bd2412b3",
+      "width": 416,
+      "height": 416,
+      "instances": 1
+    },
+    {
+      "index": 28,
+      "file_name": "open_004229_hk2126.jpg",
+      "sha256": "2f1c05868716a5137188fb2230f2270fca0572109821e5bcc308867a60d58ab0",
+      "width": 4624,
+      "height": 3472,
+      "instances": 1
+    },
+    {
+      "index": 29,
+      "file_name": "open_004234_cls05_315.jpg",
+      "sha256": "6dc50e58385d46631f52cffde0e92f5c820bc6d431b1c2019d376ad01d18bfac",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 30,
+      "file_name": "open_004801_hk0012.jpg",
+      "sha256": "cbd0a24e9c54a093abdf97c5242a96e6776daadb2abaa716814e3b4f0b6d67ee",
+      "width": 4624,
+      "height": 3472,
+      "instances": 1
+    },
+    {
+      "index": 31,
+      "file_name": "open_005038_cls05_362.jpg",
+      "sha256": "72a2caee425e61187766237734ca5809f92c13a3fde15b57f67299e2f292a8b7",
+      "width": 512,
+      "height": 512,
+      "instances": 3
+    },
+    {
+      "index": 32,
+      "file_name": "open_006206_hk2447.jpg",
+      "sha256": "18b3aff1da6478546fcdafc4cece43b4bea441078ea347ec1c2f7bd99e340fd0",
+      "width": 4624,
+      "height": 3472,
+      "instances": 1
+    },
+    {
+      "index": 33,
+      "file_name": "open_006781_cls05_460.jpg",
+      "sha256": "cc318ec295d5821394c7f47a12fdbb26c47c2b616d3cce224b3daa1836e796ad",
+      "width": 512,
+      "height": 512,
+      "instances": 2
+    },
+    {
+      "index": 34,
+      "file_name": "open_006805_istockphoto-1071523466-612x612_jpg.rf.01d4577bbd8fded3a591a0b633a424ac.jpg",
+      "sha256": "6e7cea893f7c49802d2769375d56a852083b11eae5fb1fbb03e710d8d7c1ccbc",
+      "width": 416,
+      "height": 416,
+      "instances": 6
+    },
+    {
+      "index": 35,
+      "file_name": "open_007203_419.png",
+      "sha256": "bf4caeaa0be2e507cc2a0799df638ec3293761fd8cbc34504167701cd3e28ac7",
+      "width": 1024,
+      "height": 1024,
+      "instances": 1
+    },
+    {
+      "index": 36,
+      "file_name": "open_007219_cls03_079.jpg",
+      "sha256": "d3504d77075068d8cdbb807cc09dbf2a3d4a775b8ee9e2ea6c8e20df1cefd832",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 37,
+      "file_name": "open_007238_520.png",
+      "sha256": "115e278302d2d8dfe821395c7c81c9eb73df03f55f06cd38f7d7c247da65c428",
+      "width": 1024,
+      "height": 1024,
+      "instances": 1
+    },
+    {
+      "index": 38,
+      "file_name": "open_007254_cls05_112.jpg",
+      "sha256": "bf66d7b5881233c065bc7209b76697bc12d5d7ec8ced6c4ba1f8e4e5ffcdded5",
+      "width": 512,
+      "height": 512,
+      "instances": 4
+    },
+    {
+      "index": 39,
+      "file_name": "open_007460_cls05_068.jpg",
+      "sha256": "796b0e1f0b4f1d999db6dc1bacfe7bb5bda197e9cda5a5b9c7c6a6fbe9b5c5fd",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 40,
+      "file_name": "open_007464_cls03_435.jpg",
+      "sha256": "0e83119335e296adfa47540dbf75eaf798b684adec44ff63e63c112080e4f388",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 41,
+      "file_name": "open_007478_540.png",
+      "sha256": "c2146eabb4ff6169ab65376859f21ad17c5c58f096bf9cbc188c73052fda4fda",
+      "width": 1024,
+      "height": 1024,
+      "instances": 4
+    },
+    {
+      "index": 42,
+      "file_name": "open_007493_cls05_102.jpg",
+      "sha256": "7e2a6e15ced3663d357036d53d6e890f96a9c925b852dba3104db7e2e30b46e6",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 43,
+      "file_name": "open_007770_cls03_054.jpg",
+      "sha256": "dd32a3eb6763b15e8cf985c178669342863205f05f00aa77b104cab96d2d2425",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 44,
+      "file_name": "open_007900_097.png",
+      "sha256": "2c9f1371c0a16051bbaf10418cdcb9796a4bd4e41b001519f32b1a63137b86cf",
+      "width": 1024,
+      "height": 1024,
+      "instances": 1
+    },
+    {
+      "index": 45,
+      "file_name": "open_007964_cls03_313.jpg",
+      "sha256": "226765b94a64e42c9e20bc30c69df619b0c6ad7f365a70a910781142c3f652e7",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 46,
+      "file_name": "open_008133_cls03_398.jpg",
+      "sha256": "f9d767beb6b1e3669c7bd9426b10c7529b180ba344b8ac7dbc5f3df1698b9889",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 47,
+      "file_name": "open_008175_hk1696.jpg",
+      "sha256": "c3c9143de59b03181cd130606e93ec86628d8834979a6bb5b634e101cb6af323",
+      "width": 4624,
+      "height": 3472,
+      "instances": 1
+    },
+    {
+      "index": 48,
+      "file_name": "open_008267_cls05_439.jpg",
+      "sha256": "0a1dfd31d7c1c63ee5de968188c644450c9da2b5ed6a60bc29d1cdf1335fde1c",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    },
+    {
+      "index": 49,
+      "file_name": "open_008279_cls03_168.jpg",
+      "sha256": "328c88e9563031ca6d38247094148848bfcd300f5cf7233fdbea7c9a1180147f",
+      "width": 512,
+      "height": 512,
+      "instances": 1
+    }
+  ],
+  "note": "Original pixels and mask files preserved byte-for-byte. Annotation source paths made relative; input contains bbox/type only, no reference masks."
+}

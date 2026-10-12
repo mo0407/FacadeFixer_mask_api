@@ -32,6 +32,6 @@
 ## 重算评估
 
 ```powershell
-python scripts/compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
+python tools/compare_three_methods.py --reference REFERENCE_DIR --opencv OPENCV_DIR --image25 API_DIR --hybrid REFINED_DIR --output NEW_COMPARISON_DIR
 python tests/test_comparison_metrics.py
 ```

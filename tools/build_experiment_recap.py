@@ -7,7 +7,7 @@ REPORT=ROOT/'comparison50_three_methods_v1'
 if not REPORT.exists():REPORT=ROOT/'reports/comparison50'
 OUT=ROOT/'experiment_recap_20261005';OUT.mkdir(exist_ok=True)
 summary=json.loads((REPORT/'summary.json').read_text(encoding='utf-8'))
-anns={a['image_index']:a for p in (REPORT/'reference/annotations').glob('*.json') for a in [json.loads(p.read_text(encoding='utf-8'))]}
+anns={a['image_index']:a for p in ((REPORT/'reference/annotations') if (REPORT/'reference/annotations').exists() else ROOT/'data/reference/annotations').glob('*.json') for a in [json.loads(p.read_text(encoding='utf-8'))]}
 def asset(p):
  p=Path(p)
  if p.suffix=='.svg':return 'data:image/svg+xml;base64,'+base64.b64encode(p.read_bytes()).decode()

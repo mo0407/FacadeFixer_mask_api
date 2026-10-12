@@ -12,3 +12,7 @@ results50*/
 # Published report assets must be tracked
 !reports/comparison50/images/
 !reports/comparison50/images/**
+
+# Versioned experiment input images
+!data/input/images/
+!data/input/images/**

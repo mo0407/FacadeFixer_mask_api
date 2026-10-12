@@ -3,7 +3,7 @@
   "images": [
     {
       "index": 0,
-      "image_path": "images/civil_001090_DJI_20240802073149_0238_V_0.jpg",
+      "image_path": "data/input/images/civil_001090_DJI_20240802073149_0238_V_0.jpg",
       "defects": [
         {
           "id": 1,
@@ -20,7 +20,7 @@
     },
     {
       "index": 1,
-      "image_path": "images/civil_001250_DJI_20240802070758_0022_V_2.jpg",
+      "image_path": "data/input/images/civil_001250_DJI_20240802070758_0022_V_2.jpg",
       "defects": [
         {
           "id": 1,
@@ -52,7 +52,7 @@
     },
     {
       "index": 2,
-      "image_path": "images/civil_001486_DJI_20230802074612_0171_V_2.jpg",
+      "image_path": "data/input/images/civil_001486_DJI_20230802074612_0171_V_2.jpg",
       "defects": [
         {
           "id": 1,
@@ -80,7 +80,7 @@
     },
     {
       "index": 3,
-      "image_path": "images/civil_001596_DJI_20240716121153_1349_V_0.jpg",
+      "image_path": "data/input/images/civil_001596_DJI_20240716121153_1349_V_0.jpg",
       "defects": [
         {
           "id": 1,
@@ -108,7 +108,7 @@
     },
     {
       "index": 4,
-      "image_path": "images/civil_001790_DJI_20240802075055_0076_V_22.jpg",
+      "image_path": "data/input/images/civil_001790_DJI_20240802075055_0076_V_22.jpg",
       "defects": [
         {
           "id": 1,
@@ -125,7 +125,7 @@
     },
     {
       "index": 5,
-      "image_path": "images/civil_002357_DJI_20240821091230_0262_V_0.jpg",
+      "image_path": "data/input/images/civil_002357_DJI_20240821091230_0262_V_0.jpg",
       "defects": [
         {
           "id": 1,
@@ -164,7 +164,7 @@
     },
     {
       "index": 6,
-      "image_path": "images/civil_002484_DJI_20240621111104_0058_V_3.jpg",
+      "image_path": "data/input/images/civil_002484_DJI_20240621111104_0058_V_3.jpg",
       "defects": [
         {
           "id": 1,
@@ -181,7 +181,7 @@
     },
     {
       "index": 7,
-      "image_path": "images/civil_002621_DJI_20240624094533_0266_V_13.jpg",
+      "image_path": "data/input/images/civil_002621_DJI_20240624094533_0266_V_13.jpg",
       "defects": [
         {
           "id": 1,
@@ -231,7 +231,7 @@
     },
     {
       "index": 8,
-      "image_path": "images/civil_002711_DJI_20240624112525_0581_V_3.jpg",
+      "image_path": "data/input/images/civil_002711_DJI_20240624112525_0581_V_3.jpg",
       "defects": [
         {
           "id": 1,
@@ -248,7 +248,7 @@
     },
     {
       "index": 9,
-      "image_path": "images/civil_003065_DJI_20240808110906_0272_V_10.jpg",
+      "image_path": "data/input/images/civil_003065_DJI_20240808110906_0272_V_10.jpg",
       "defects": [
         {
           "id": 1,
@@ -265,7 +265,7 @@
     },
     {
       "index": 10,
-      "image_path": "images/civil_003293_DJI_20240429094033_0178_V_0.jpg",
+      "image_path": "data/input/images/civil_003293_DJI_20240429094033_0178_V_0.jpg",
       "defects": [
         {
           "id": 1,
@@ -282,7 +282,7 @@
     },
     {
       "index": 11,
-      "image_path": "images/civil_003385_DJI_20230830092039_0013_V_1.jpg",
+      "image_path": "data/input/images/civil_003385_DJI_20230830092039_0013_V_1.jpg",
       "defects": [
         {
           "id": 1,
@@ -299,7 +299,7 @@
     },
     {
       "index": 12,
-      "image_path": "images/civil_003585_DJI_20240709110337_0005_V_0.jpg",
+      "image_path": "data/input/images/civil_003585_DJI_20240709110337_0005_V_0.jpg",
       "defects": [
         {
           "id": 1,
@@ -316,7 +316,7 @@
     },
     {
       "index": 13,
-      "image_path": "images/civil_003656_DJI_20240528105657_0529_V_4.jpg",
+      "image_path": "data/input/images/civil_003656_DJI_20240528105657_0529_V_4.jpg",
       "defects": [
         {
           "id": 1,
@@ -355,7 +355,7 @@
     },
     {
       "index": 14,
-      "image_path": "images/civil_004617_DJI_20240624110822_0050_V_12.jpg",
+      "image_path": "data/input/images/civil_004617_DJI_20240624110822_0050_V_12.jpg",
       "defects": [
         {
           "id": 1,
@@ -405,7 +405,7 @@
     },
     {
       "index": 15,
-      "image_path": "images/civil_004688_DJI_20240624094746_0399_V_2.jpg",
+      "image_path": "data/input/images/civil_004688_DJI_20240624094746_0399_V_2.jpg",
       "defects": [
         {
           "id": 1,
@@ -477,7 +477,7 @@
     },
     {
       "index": 16,
-      "image_path": "images/civil_004768_DJI_20240624111853_0248_V_11.jpg",
+      "image_path": "data/input/images/civil_004768_DJI_20240624111853_0248_V_11.jpg",
       "defects": [
         {
           "id": 1,
@@ -549,7 +549,7 @@
     },
     {
       "index": 17,
-      "image_path": "images/civil_004839_DJI_20240821105343_0720_V_8.jpg",
+      "image_path": "data/input/images/civil_004839_DJI_20240821105343_0720_V_8.jpg",
       "defects": [
         {
           "id": 1,
@@ -566,7 +566,7 @@
     },
     {
       "index": 18,
-      "image_path": "images/civil_004995_DJI_20230905084649_0029_V_5.jpg",
+      "image_path": "data/input/images/civil_004995_DJI_20230905084649_0029_V_5.jpg",
       "defects": [
         {
           "id": 1,
@@ -638,7 +638,7 @@
     },
     {
       "index": 19,
-      "image_path": "images/civil_005042_DJI_20240627104808_0411_V_14.jpg",
+      "image_path": "data/input/images/civil_005042_DJI_20240627104808_0411_V_14.jpg",
       "defects": [
         {
           "id": 1,
@@ -677,7 +677,7 @@
     },
     {
       "index": 20,
-      "image_path": "images/civil_005329_DJI_20230814091833_0079_V_14.jpg",
+      "image_path": "data/input/images/civil_005329_DJI_20230814091833_0079_V_14.jpg",
       "defects": [
         {
           "id": 1,
@@ -705,7 +705,7 @@
     },
     {
       "index": 21,
-      "image_path": "images/civil_005562_DJI_20230802073945_0074_V_28.jpg",
+      "image_path": "data/input/images/civil_005562_DJI_20230802073945_0074_V_28.jpg",
       "defects": [
         {
           "id": 1,
@@ -766,7 +766,7 @@
     },
     {
       "index": 22,
-      "image_path": "images/civil_006001_DJI_20240612155222_0081_V_16.jpg",
+      "image_path": "data/input/images/civil_006001_DJI_20240612155222_0081_V_16.jpg",
       "defects": [
         {
           "id": 1,
@@ -849,7 +849,7 @@
     },
     {
       "index": 23,
-      "image_path": "images/open_001918_istockphoto-484578825-612x612_jpg.rf.1f366a5098a2cc9aaa7de26930c58fe8.jpg",
+      "image_path": "data/input/images/open_001918_istockphoto-484578825-612x612_jpg.rf.1f366a5098a2cc9aaa7de26930c58fe8.jpg",
       "defects": [
         {
           "id": 1,
@@ -866,7 +866,7 @@
     },
     {
       "index": 24,
-      "image_path": "images/open_001967_cls05_334.jpg",
+      "image_path": "data/input/images/open_001967_cls05_334.jpg",
       "defects": [
         {
           "id": 1,
@@ -894,7 +894,7 @@
     },
     {
       "index": 25,
-      "image_path": "images/open_002104_cls05_238.jpg",
+      "image_path": "data/input/images/open_002104_cls05_238.jpg",
       "defects": [
         {
           "id": 1,
@@ -933,7 +933,7 @@
     },
     {
       "index": 26,
-      "image_path": "images/open_002597_cls05_394.jpg",
+      "image_path": "data/input/images/open_002597_cls05_394.jpg",
       "defects": [
         {
           "id": 1,
@@ -961,7 +961,7 @@
     },
     {
       "index": 27,
-      "image_path": "images/open_004007_istockphoto-1095690108-612x612_jpg.rf.350e9c0c4f34e155c10eeb60607b5436.jpg",
+      "image_path": "data/input/images/open_004007_istockphoto-1095690108-612x612_jpg.rf.350e9c0c4f34e155c10eeb60607b5436.jpg",
       "defects": [
         {
           "id": 1,
@@ -978,7 +978,7 @@
     },
     {
       "index": 28,
-      "image_path": "images/open_004229_hk2126.jpg",
+      "image_path": "data/input/images/open_004229_hk2126.jpg",
       "defects": [
         {
           "id": 1,
@@ -995,7 +995,7 @@
     },
     {
       "index": 29,
-      "image_path": "images/open_004234_cls05_315.jpg",
+      "image_path": "data/input/images/open_004234_cls05_315.jpg",
       "defects": [
         {
           "id": 1,
@@ -1012,7 +1012,7 @@
     },
     {
       "index": 30,
-      "image_path": "images/open_004801_hk0012.jpg",
+      "image_path": "data/input/images/open_004801_hk0012.jpg",
       "defects": [
         {
           "id": 1,
@@ -1029,7 +1029,7 @@
     },
     {
       "index": 31,
-      "image_path": "images/open_005038_cls05_362.jpg",
+      "image_path": "data/input/images/open_005038_cls05_362.jpg",
       "defects": [
         {
           "id": 1,
@@ -1068,7 +1068,7 @@
     },
     {
       "index": 32,
-      "image_path": "images/open_006206_hk2447.jpg",
+      "image_path": "data/input/images/open_006206_hk2447.jpg",
       "defects": [
         {
           "id": 1,
@@ -1085,7 +1085,7 @@
     },
     {
       "index": 33,
-      "image_path": "images/open_006781_cls05_460.jpg",
+      "image_path": "data/input/images/open_006781_cls05_460.jpg",
       "defects": [
         {
           "id": 1,
@@ -1113,7 +1113,7 @@
     },
     {
       "index": 34,
-      "image_path": "images/open_006805_istockphoto-1071523466-612x612_jpg.rf.01d4577bbd8fded3a591a0b633a424ac.jpg",
+      "image_path": "data/input/images/open_006805_istockphoto-1071523466-612x612_jpg.rf.01d4577bbd8fded3a591a0b633a424ac.jpg",
       "defects": [
         {
           "id": 1,
@@ -1185,7 +1185,7 @@
     },
     {
       "index": 35,
-      "image_path": "images/open_007203_419.png",
+      "image_path": "data/input/images/open_007203_419.png",
       "defects": [
         {
           "id": 1,
@@ -1202,7 +1202,7 @@
     },
     {
       "index": 36,
-      "image_path": "images/open_007219_cls03_079.jpg",
+      "image_path": "data/input/images/open_007219_cls03_079.jpg",
       "defects": [
         {
           "id": 1,
@@ -1219,7 +1219,7 @@
     },
     {
       "index": 37,
-      "image_path": "images/open_007238_520.png",
+      "image_path": "data/input/images/open_007238_520.png",
       "defects": [
         {
           "id": 1,
@@ -1236,7 +1236,7 @@
     },
     {
       "index": 38,
-      "image_path": "images/open_007254_cls05_112.jpg",
+      "image_path": "data/input/images/open_007254_cls05_112.jpg",
       "defects": [
         {
           "id": 1,
@@ -1286,7 +1286,7 @@
     },
     {
       "index": 39,
-      "image_path": "images/open_007460_cls05_068.jpg",
+      "image_path": "data/input/images/open_007460_cls05_068.jpg",
       "defects": [
         {
           "id": 1,
@@ -1303,7 +1303,7 @@
     },
     {
       "index": 40,
-      "image_path": "images/open_007464_cls03_435.jpg",
+      "image_path": "data/input/images/open_007464_cls03_435.jpg",
       "defects": [
         {
           "id": 1,
@@ -1320,7 +1320,7 @@
     },
     {
       "index": 41,
-      "image_path": "images/open_007478_540.png",
+      "image_path": "data/input/images/open_007478_540.png",
       "defects": [
         {
           "id": 1,
@@ -1370,7 +1370,7 @@
     },
     {
       "index": 42,
-      "image_path": "images/open_007493_cls05_102.jpg",
+      "image_path": "data/input/images/open_007493_cls05_102.jpg",
       "defects": [
         {
           "id": 1,
@@ -1387,7 +1387,7 @@
     },
     {
       "index": 43,
-      "image_path": "images/open_007770_cls03_054.jpg",
+      "image_path": "data/input/images/open_007770_cls03_054.jpg",
       "defects": [
         {
           "id": 1,
@@ -1404,7 +1404,7 @@
     },
     {
       "index": 44,
-      "image_path": "images/open_007900_097.png",
+      "image_path": "data/input/images/open_007900_097.png",
       "defects": [
         {
           "id": 1,
@@ -1421,7 +1421,7 @@
     },
     {
       "index": 45,
-      "image_path": "images/open_007964_cls03_313.jpg",
+      "image_path": "data/input/images/open_007964_cls03_313.jpg",
       "defects": [
         {
           "id": 1,
@@ -1438,7 +1438,7 @@
     },
     {
       "index": 46,
-      "image_path": "images/open_008133_cls03_398.jpg",
+      "image_path": "data/input/images/open_008133_cls03_398.jpg",
       "defects": [
         {
           "id": 1,
@@ -1455,7 +1455,7 @@
     },
     {
       "index": 47,
-      "image_path": "images/open_008175_hk1696.jpg",
+      "image_path": "data/input/images/open_008175_hk1696.jpg",
       "defects": [
         {
           "id": 1,
@@ -1472,7 +1472,7 @@
     },
     {
       "index": 48,
-      "image_path": "images/open_008267_cls05_439.jpg",
+      "image_path": "data/input/images/open_008267_cls05_439.jpg",
       "defects": [
         {
           "id": 1,
@@ -1489,7 +1489,7 @@
     },
     {
       "index": 49,
-      "image_path": "images/open_008279_cls03_168.jpg",
+      "image_path": "data/input/images/open_008279_cls03_168.jpg",
       "defects": [
         {
           "id": 1,
