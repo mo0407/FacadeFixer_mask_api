@@ -9,13 +9,13 @@
   "created_at": "2026-09-28T14:00:54.719078+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Crack",
     "Peeling",
+    "Crack",
     "Ruststain"
   ],
   "visually_proposed_classes": [
-    "Crack",
     "Peeling",
+    "Crack",
     "Ruststain"
   ],
   "defects": [
@@ -2522,5 +2522,5 @@
     "provenance_directory": "provenance/14",
     "historical_paths_are_provenance_only": true
   },
-  "taxonomy_version": "facade_20261013"
+  "taxonomy_version": "facade_20261013_v2"
 }

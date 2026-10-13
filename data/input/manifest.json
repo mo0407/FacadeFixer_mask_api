@@ -1286,7 +1286,7 @@
       "defects": [
         {
           "id": 1,
-          "class_code": "L",
+          "class_code": "B",
           "class_name": "Baihua",
           "bbox_xyxy": [
             0,
@@ -1343,7 +1343,7 @@
         {
           "id": 4,
           "class_code": "L",
-          "class_name": "Baihua",
+          "class_name": "Leakagestain",
           "bbox_xyxy": [
             82,
             251,
@@ -1352,7 +1352,7 @@
           ],
           "original_class_code": "L",
           "original_class_name": "Leakagestain",
-          "class_name_zh": "白桦"
+          "class_name_zh": "渗漏"
         }
       ]
     },
@@ -1580,5 +1580,5 @@
       ]
     }
   ],
-  "taxonomy_version": "facade_20261013"
+  "taxonomy_version": "facade_20261013_v2"
 }

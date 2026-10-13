@@ -9,12 +9,12 @@
   "created_at": "2026-09-28T14:59:15.918000+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Surfacecontaminants",
-    "Vegetationgrowth"
+    "Vegetationgrowth",
+    "Surfacecontaminants"
   ],
   "visually_proposed_classes": [
-    "Surfacecontaminants",
-    "Vegetationgrowth"
+    "Vegetationgrowth",
+    "Surfacecontaminants"
   ],
   "defects": [
     {
@@ -3787,5 +3787,5 @@
     "provenance_directory": "provenance/03",
     "historical_paths_are_provenance_only": true
   },
-  "taxonomy_version": "facade_20261013"
+  "taxonomy_version": "facade_20261013_v2"
 }

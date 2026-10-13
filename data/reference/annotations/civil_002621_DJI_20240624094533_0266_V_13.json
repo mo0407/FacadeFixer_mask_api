@@ -10,14 +10,14 @@
   "stage": "segmentation_complete_candidate",
   "classes_present": [
     "Crack",
-    "Ruststain",
     "Spalling",
+    "Ruststain",
     "Surfacecontaminants"
   ],
   "visually_proposed_classes": [
     "Crack",
-    "Ruststain",
     "Spalling",
+    "Ruststain",
     "Surfacecontaminants"
   ],
   "defects": [
@@ -1099,5 +1099,5 @@
     "provenance_directory": "provenance/07",
     "historical_paths_are_provenance_only": true
   },
-  "taxonomy_version": "facade_20261013"
+  "taxonomy_version": "facade_20261013_v2"
 }

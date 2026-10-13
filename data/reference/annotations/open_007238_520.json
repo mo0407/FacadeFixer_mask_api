@@ -17,7 +17,7 @@
   "defects": [
     {
       "id": 1,
-      "class_code": "L",
+      "class_code": "B",
       "class_name": "Baihua",
       "bbox_xyxy": [
         0,
@@ -15606,5 +15606,5 @@
     "provenance_directory": "provenance/37",
     "historical_paths_are_provenance_only": true
   },
-  "taxonomy_version": "facade_20261013"
+  "taxonomy_version": "facade_20261013_v2"
 }
