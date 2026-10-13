@@ -9,12 +9,12 @@
   "created_at": "2026-09-28T14:00:54.719078+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Linearcrack",
+    "Crack",
     "Peeling",
     "Ruststain"
   ],
   "visually_proposed_classes": [
-    "Linearcrack",
+    "Crack",
     "Peeling",
     "Ruststain"
   ],
@@ -1027,7 +1027,7 @@
     {
       "id": 2,
       "class_code": "C",
-      "class_name": "Linearcrack",
+      "class_name": "Crack",
       "bbox_xyxy": [
         0,
         0,
@@ -1873,12 +1873,15 @@
         2,
         336,
         79
-      ]
+      ],
+      "original_class_code": "C",
+      "original_class_name": "Linearcrack",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 3,
       "class_code": "C",
-      "class_name": "Linearcrack",
+      "class_name": "Crack",
       "bbox_xyxy": [
         260,
         175,
@@ -2272,7 +2275,10 @@
         179,
         290,
         659
-      ]
+      ],
+      "original_class_code": "C",
+      "original_class_name": "Linearcrack",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 4,
@@ -2515,5 +2521,6 @@
     "selected_revision": "builtin50_multi_instance_20260928_v2",
     "provenance_directory": "provenance/14",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

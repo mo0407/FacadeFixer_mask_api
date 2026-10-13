@@ -9,16 +9,16 @@
   "created_at": "2026-09-28T12:50:44.612602+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Mapcracking"
+    "Crack"
   ],
   "visually_proposed_classes": [
-    "Mapcracking"
+    "Crack"
   ],
   "defects": [
     {
       "id": 1,
-      "class_code": "M",
-      "class_name": "Mapcracking",
+      "class_code": "C",
+      "class_name": "Crack",
       "bbox_xyxy": [
         163,
         0,
@@ -5301,7 +5301,10 @@
       "prior_quality_flags": [],
       "merged_segmentation_methods": [],
       "grouping_radius_fraction_of_short_side": null,
-      "maximum_join_gap_fraction_of_short_side": null
+      "maximum_join_gap_fraction_of_short_side": null,
+      "original_class_code": "M",
+      "original_class_name": "Mapcracking",
+      "class_name_zh": "裂缝"
     }
   ],
   "status": "candidate_mask_requires_review",
@@ -5390,5 +5393,9 @@
     "selected_revision": "builtin50_detection_first_20260928",
     "provenance_directory": "provenance/08",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "class_mask_paths": {
+    "C": "class_masks/civil_002711_DJI_20240624112525_0581_V_3_C.png"
+  },
+  "taxonomy_version": "facade_20261013"
 }

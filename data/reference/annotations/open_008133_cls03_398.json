@@ -478,5 +478,6 @@
     "selected_revision": "builtin50_detection_first_20260928",
     "provenance_directory": "provenance/46",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

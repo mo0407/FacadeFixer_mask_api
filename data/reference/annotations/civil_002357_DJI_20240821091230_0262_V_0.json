@@ -9,18 +9,18 @@
   "created_at": "2026-09-28T14:59:16.051219+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Linearcrack",
+    "Crack",
     "Spalling"
   ],
   "visually_proposed_classes": [
-    "Linearcrack",
+    "Crack",
     "Spalling"
   ],
   "defects": [
     {
       "id": 1,
       "class_code": "C",
-      "class_name": "Linearcrack",
+      "class_name": "Crack",
       "bbox_xyxy": [
         0,
         0,
@@ -2046,7 +2046,10 @@
         "exclude_spalling_interior": true,
         "minimum_component_pixels": 5
       },
-      "overlay_reviewed": true
+      "overlay_reviewed": true,
+      "original_class_code": "C",
+      "original_class_name": "Linearcrack",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 2,
@@ -2831,5 +2834,6 @@
     "selected_revision": "builtin50_pixelaligned_20260928_v4",
     "provenance_directory": "provenance/05",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

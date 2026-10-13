@@ -15399,5 +15399,6 @@
     "selected_revision": "builtin50_litter_wall_20260928_v6",
     "provenance_directory": "provenance/01",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

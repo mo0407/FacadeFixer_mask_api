@@ -81,6 +81,13 @@ python tests/test_comparison_metrics.py
 
 统计按原图哈希、实例ID、bbox和类别对齐。既报告缺失计0分的全部实例，也报告共同有输出的实例；指标表示与候选参考的一致度。参考不用于精修调参。详见[评价说明](EVALUATION.md)。
 
+
+## 类别调整（2026-10-13）
+
+原裂缝C和网裂M合并为“裂缝”C，共23个实例；原渗漏／沉积物L按用户指定名称改为“白桦”L，共2个实例。当前共8类、109个实例。
+
+此操作是类别归并与改名，不重新判断缺陷外观：原图、bbox、单实例mask和RLE均未改变。类别mask按新类别合并，按类别的指标重新聚合；全部实例的总体指标不变。`original_class_code` / `original_class_name` 保留修改前类别，历史API提示词与原始响应不改写。见 [类别映射](data/taxonomy.json)。
+
 ## 报告与展示
 
 - **[精简版实验报告](https://mo0407.github.io/FacadeFixer_mask_api/reports/experiment_brief/index.html)**：方法、流程图、分类统计、时间费用和结论。

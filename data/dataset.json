@@ -407,5 +407,26 @@
       "instances": 1
     }
   ],
-  "note": "Original pixels and mask files preserved byte-for-byte. Annotation source paths made relative; input contains bbox/type only, no reference masks."
+  "note": "Original pixels and mask files preserved byte-for-byte. Annotation source paths made relative; input contains bbox/type only, no reference masks.",
+  "taxonomy_version": "facade_20261013",
+  "class_counts": {
+    "C": 23,
+    "D": 17,
+    "L": 2,
+    "P": 29,
+    "R": 3,
+    "S": 21,
+    "T": 11,
+    "V": 3
+  },
+  "class_labels": {
+    "C": "裂缝",
+    "P": "剥落",
+    "S": "破损",
+    "T": "锈迹",
+    "R": "腐蚀",
+    "D": "污染物",
+    "L": "白桦",
+    "V": "植物"
+  }
 }

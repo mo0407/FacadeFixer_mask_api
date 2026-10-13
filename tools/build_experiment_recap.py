@@ -3,7 +3,7 @@ from pathlib import Path
 import json,csv,base64,io,html
 from PIL import Image
 ROOT=Path(__file__).resolve().parent.parent
-REPORT=ROOT/'comparison50_three_methods_v1'
+REPORT=ROOT/'reports/comparison50'
 if not REPORT.exists():REPORT=ROOT/'reports/comparison50'
 OUT=ROOT/'experiment_recap_20261005';OUT.mkdir(exist_ok=True)
 summary=json.loads((REPORT/'summary.json').read_text(encoding='utf-8'))
@@ -41,10 +41,10 @@ slide('三种方法共享同一套实例与坐标',table(['比较对象','分割
  ['image2.5','局部原图画布 + bbox坐标 + 类型提示','否','否；00/04沿用历史API试验'],
  ['image2.5 + OpenCV','原图 + 同一bbox/类型 + API实例mask','是','否']])+'<p class="takeaway">按原图哈希、实例ID、类别和bbox核对；独立保留每个实例。</p>','参考mask不参与待测分割。之前04号曾有人工轮廓辅助版本，未混入本次自动精修实验。VS Code是运行环境，不是模型。')
 slide('方法一：OpenCV按缺陷外观分流',table(['缺陷','处理方法','主要风险'],[
- ['裂缝 / 网裂','多尺度black-hat暗线 + 连通域','墙缝、管线和纹理误选'],
+ ['裂缝（含网状）','多尺度black-hat暗线 + 连通域','墙缝、管线和纹理误选'],
  ['锈迹 / 腐蚀','HSV / Lab颜色筛选','红漆、棕色基材混淆'],
  ['植物 / 地面垃圾','绿或暗色 / 相对地面背景的Lab色差','阴影、暗布料、亮地面'],
- ['污渍 / 渗漏','全局暗色 + 局部对比，追加黄棕响应','白色析出物可能漏检'],
+ ['污渍 / 白桦','全局暗色 + 局部对比，追加黄棕响应','白色析出物可能漏检'],
  ['剥落 / 破损','Lab聚类选种子 + GrabCut','前背景倒置、空腔与基材混淆']])+'<p class="foot">裂缝原分辨率；区域ROI长边最多1000像素。还原到原图后导出实例mask及并集。</p>','运行入口为skill/scripts/segment.py；这是纯bbox基线，不是assisted人工引导版。记录显示50张109实例、运行约46.8秒（另精修时间不是这个数）。')
 slide('方法二：先构造局部画布，再还原原图坐标',chain(['bbox外扩上下文<br>记录原图偏移','宽高比大于3？<br>长边分4段','单面板 / 2×2拼图<br>统一1024画布','每bbox一次API<br>返回黑白mask','按几何记录逆映射<br>原尺寸裁框'])+'<div class="columns compact"><p>横向边距：bbox宽的20%，至少12px。<br>纵向边距：bbox高的2.5%，至少12px。</p><p>阈值128；最近邻还原；拒绝异常长宽比。<br>保存真实上传画布、原始返回、几何和裁框前mask。</p></div><p class="takeaway">几何逆变换可以复现；模型重绘造成的内容偏移仍可能存在。</p>','代码：batch_local.py和local_crop_trial.py。模型是服务商标识的gpt-image-2.5，底层身份未独立验证。此处不做OpenCV修边。')
 slide('API批量处理：补齐请求与修好分割是两件事',table(['后40张的轮次','累计请求','成功实例 / 91','仍缺失'],[

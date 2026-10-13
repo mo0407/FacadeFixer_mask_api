@@ -130,13 +130,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             211,
             627
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 2,
@@ -186,13 +189,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             46,
             101,
             150,
             403
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 2,
@@ -235,14 +241,17 @@
       "defects": [
         {
           "id": 1,
-          "class_code": "M",
-          "class_name": "Mapcracking",
+          "class_code": "C",
+          "class_name": "Crack",
           "bbox_xyxy": [
             163,
             0,
             581,
             1352
-          ]
+          ],
+          "original_class_code": "M",
+          "original_class_name": "Mapcracking",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -320,14 +329,17 @@
       "defects": [
         {
           "id": 1,
-          "class_code": "M",
-          "class_name": "Mapcracking",
+          "class_code": "C",
+          "class_name": "Crack",
           "bbox_xyxy": [
             189,
             15,
             503,
             493
-          ]
+          ],
+          "original_class_code": "M",
+          "original_class_name": "Mapcracking",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 2,
@@ -371,24 +383,30 @@
         {
           "id": 2,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             336,
             114
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 3,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             260,
             175,
             290,
             659
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 4,
@@ -454,24 +472,30 @@
         {
           "id": 5,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             631,
             153,
             760,
             396
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 6,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             812,
             383,
             864,
             485
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -526,24 +550,30 @@
         {
           "id": 5,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             176,
             165,
             391,
             468
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 6,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             119,
             448,
             439,
             494
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -554,13 +584,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             63,
             0,
             289,
             290
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -582,13 +615,16 @@
         {
           "id": 2,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             164,
             72,
             221,
             636
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 3,
@@ -642,14 +678,17 @@
       "defects": [
         {
           "id": 1,
-          "class_code": "M",
-          "class_name": "Mapcracking",
+          "class_code": "C",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             88,
             900,
             241
-          ]
+          ],
+          "original_class_code": "M",
+          "original_class_name": "Mapcracking",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 2,
@@ -665,13 +704,16 @@
         {
           "id": 3,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             890,
             153,
             989,
             193
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -710,13 +752,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             521,
             887
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 2,
@@ -837,13 +882,16 @@
         {
           "id": 7,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             32,
             171,
             227,
             845
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -949,13 +997,16 @@
         {
           "id": 2,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             205,
             0,
             348,
             481
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -1000,13 +1051,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             440,
             512
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -1045,24 +1099,30 @@
         {
           "id": 2,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             118,
             195,
             512,
             369
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 3,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             123,
             276,
             410,
             497
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -1207,13 +1267,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             507,
             379
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -1224,13 +1287,16 @@
         {
           "id": 1,
           "class_code": "L",
-          "class_name": "Leakagestain",
+          "class_name": "Baihua",
           "bbox_xyxy": [
             0,
             174,
             1024,
             1024
-          ]
+          ],
+          "original_class_code": "L",
+          "original_class_name": "Leakagestain",
+          "class_name_zh": "白桦"
         }
       ]
     },
@@ -1252,13 +1318,16 @@
         {
           "id": 2,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             0,
             118,
             102
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         },
         {
           "id": 3,
@@ -1274,13 +1343,16 @@
         {
           "id": 4,
           "class_code": "L",
-          "class_name": "Leakagestain",
+          "class_name": "Baihua",
           "bbox_xyxy": [
             82,
             251,
             287,
             512
-          ]
+          ],
+          "original_class_code": "L",
+          "original_class_name": "Leakagestain",
+          "class_name_zh": "白桦"
         }
       ]
     },
@@ -1460,13 +1532,16 @@
         {
           "id": 1,
           "class_code": "C",
-          "class_name": "Linearcrack",
+          "class_name": "Crack",
           "bbox_xyxy": [
             0,
             69,
             4624,
             3472
-          ]
+          ],
+          "original_class_code": "C",
+          "original_class_name": "Linearcrack",
+          "class_name_zh": "裂缝"
         }
       ]
     },
@@ -1504,5 +1579,6 @@
         }
       ]
     }
-  ]
+  ],
+  "taxonomy_version": "facade_20261013"
 }

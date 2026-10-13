@@ -10,14 +10,14 @@
   "stage": "segmentation_complete_candidate",
   "classes_present": [
     "Corrosion",
-    "Leakagestain",
-    "Linearcrack",
+    "Baihua",
+    "Crack",
     "Spalling"
   ],
   "visually_proposed_classes": [
     "Corrosion",
-    "Leakagestain",
-    "Linearcrack",
+    "Baihua",
+    "Crack",
     "Spalling"
   ],
   "defects": [
@@ -1189,7 +1189,7 @@
     {
       "id": 2,
       "class_code": "C",
-      "class_name": "Linearcrack",
+      "class_name": "Crack",
       "bbox_xyxy": [
         0,
         0,
@@ -1475,7 +1475,10 @@
         5,
         104,
         72
-      ]
+      ],
+      "original_class_code": "C",
+      "original_class_name": "Linearcrack",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 3,
@@ -2467,7 +2470,7 @@
     {
       "id": 4,
       "class_code": "L",
-      "class_name": "Leakagestain",
+      "class_name": "Baihua",
       "bbox_xyxy": [
         82,
         251,
@@ -3231,7 +3234,10 @@
         263,
         195,
         512
-      ]
+      ],
+      "original_class_code": "L",
+      "original_class_name": "Leakagestain",
+      "class_name_zh": "白桦"
     }
   ],
   "status": "candidate_mask_requires_review",
@@ -3369,5 +3375,6 @@
     "selected_revision": "builtin50_multi_instance_20260928_v2",
     "provenance_directory": "provenance/38",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

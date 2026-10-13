@@ -4,7 +4,6 @@ import json,html,base64,io
 import csv
 from PIL import Image
 from recap_reading_layout import JS
-from reporting_classes import CLASS_NAMES, METRICS, MERGE_NOTE, reporting_code, summarize_classes
 ROOT=Path(__file__).resolve().parent.parent
 REPORT=ROOT/'reports/comparison50'
 OUT=ROOT/'reports/experiment_brief';OUT.mkdir(exist_ok=True)
@@ -35,22 +34,15 @@ css='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;backgro
 from brief_flowcharts_medium import attach, CSS as FLOW_CSS
 attach(slides,OUT)
 css+=FLOW_CSS
+class_rows=list(csv.DictReader((REPORT/'classes.csv').read_text(encoding='utf-8-sig').splitlines()))
 instance_rows=list(csv.DictReader((REPORT/'instances.csv').read_text(encoding='utf-8-sig').splitlines()))
-class_rows=summarize_classes(instance_rows,['opencv','image25','hybrid'])
-saved_classes=list(csv.DictReader((REPORT/'classes.csv').read_text(encoding='utf-8-sig').splitlines()))
-saved_by_class={(r['method'],r['class_code']):r for r in saved_classes}
-assert set(saved_by_class)=={(r['method'],r['class_code']) for r in class_rows},'Refresh classes.csv from instances.csv first'
-for row in class_rows:
- saved=saved_by_class[row['method'],row['class_code']]
- assert int(saved['instances'])==row['instances']
- assert all(abs(float(saved['macro_'+k])-row['macro_'+k])<1e-9 for k in METRICS)
-names=CLASS_NAMES
+names={'C':'裂缝','P':'剥落','S':'破损','T':'锈迹','R':'腐蚀','D':'污染物','L':'白桦','V':'植物'}
 by_class={(r['method'],r['class_code']):r for r in class_rows}
 methods=['opencv','image25','hybrid'];class_table=[]
-for code in names:
+for code in ['C','P','S','T','R','D','L','V']:
  n=int(by_class['opencv',code]['instances']);scores=[float(by_class[m,code]['macro_iou']) for m in methods];cells=[]
  for method,score in zip(methods,scores):
-  entries=[r for r in instance_rows if reporting_code(r['class_code'])==code and r['method']==method]
+  entries=[r for r in instance_rows if r['class_code']==code and r['method']==method]
   assert len(entries)==n
   assert abs(sum(float(r['iou']) for r in entries)/n-score)<1e-9
   available=sum(r['missing'].lower()=='false' for r in entries)
@@ -59,12 +51,10 @@ for code in names:
   cells.append(f'<td><span{mark}>IoU {score:.3f}</span><br><span class="class-secondary">边界F1 {bf1:.3f}<br>有输出 {available}/{n}</span></td>')
  class_table.append(f'<tr><th scope="row">{names[code]} <small>{code}</small></th><td>{n}</td>'+''.join(cells)+'</tr>')
 assert sum(int(by_class['opencv',c]['instances']) for c in names)==109
-assert int(by_class['opencv','C+M']['instances'])==23
-leading={metric:{m:sum(by_class[m,c]['macro_'+metric]==max(by_class[k,c]['macro_'+metric] for k in methods) for c in names) for m in methods} for metric in ('iou','boundary_f1')}
-stats='''<p>按缺陷实例统计，而不是按图片统计；一张图片可以包含多种缺陷。每格列出区域重合度、边界贴合度和有输出的实例数。</p><p>'''+html.escape(MERGE_NOTE)+''' 本轮报告8类，裂缝共23个实例（C 20个＋M 3个），不是对两类均值再取简单平均。</p><div class="class-scroll"><table class="class-stats"><thead><tr><th>缺陷类型</th><th>实例数</th><th>OpenCV</th><th>image2.5</th><th>image2.5＋OpenCV</th></tr></thead><tbody>'''+''.join(class_table)+f'''</tbody></table></div><p class="muted">绿色加粗仅标记该类最高平均IoU，不表示全面最优。有输出也不代表分割合格；缺失实例按0分计入均值。边界F1采用原图2像素容差。</p><p><b>主要观察：</b>混合方法在{len(names)}类中的{leading['iou']['hybrid']}类平均IoU最高，OpenCV在污染物和破损上最高。API初稿在{len(names)}类中的{leading['boundary_f1']['image25']}类边界F1最高，混合方法在裂缝和剥落上最高。</p><p><b>优先改进：</b>裂缝（含网裂）的三种方法平均IoU均低于0.18，仍是共同难点。</p><p class="muted">腐蚀、植物各仅3个实例，渗漏／沉积物仅2个，不能据此推广排名。污染物D合并墙面污渍与地面垃圾；原始标注与逐实例C/M编码保留。所有指标比较的仍是未经独立专家验收的候选参考。</p>'''
+stats='''<p>按缺陷实例统计，而不是按图片统计；一张图片可以包含多种缺陷。每格列出区域重合度、边界贴合度和有输出的实例数。</p><div class="class-scroll"><table class="class-stats"><thead><tr><th>缺陷类型</th><th>实例数</th><th>OpenCV</th><th>image2.5</th><th>image2.5＋OpenCV</th></tr></thead><tbody>'''+''.join(class_table)+'''</tbody></table></div><p class="muted">绿色加粗仅标记该类最高平均IoU，不表示全面最优。有输出也不代表分割合格；缺失实例按0分计入均值。边界F1采用原图2像素容差。</p><p><b>主要观察：</b>混合方法在8类中的6类平均IoU最高，OpenCV在污染物和破损上最高。API初稿在8类中的6类边界F1最高，混合方法在裂缝和剥落上最高。</p><p><b>优先改进：</b>合并后的裂缝类，三种方法平均IoU均低于0.18，仍是共同难点。</p><p class="muted">腐蚀、植物各仅3个实例，白桦仅2个，不能据此推广排名。污染物D合并墙面污渍与地面垃圾；类别于2026年10月13日调整：原裂缝与网裂合并为裂缝C，共23例；原L类改名为白桦，共2例。实例mask未改动。所有指标比较的仍是未经独立专家验收的候选参考。</p>'''
 slides[6]=(slides[6][0].replace('06','07',1),slides[6][1],slides[6][2])
 slides[7]=(slides[7][0].replace('07','08',1),slides[7][1],slides[7][2])
-slides.insert(6,('06　每种缺陷的处理情况',stats,'来源：classes.csv与instances.csv，C/M仅在统计时合并为裂缝，共23实例、8类。按类别、方法核对全部109个实例。IoU与边界F1为实例等权平均，缺失计0，不是检测分类准确率。'))
+slides.insert(6,('06　每种缺陷的处理情况',stats,'来源：classes.csv与instances.csv，按类别、方法核对全部109个实例。IoU与边界F1为实例等权平均，缺失计0，不是检测分类准确率。'))
 time_cost=json.loads((REPORT/'time_cost.json').read_text(encoding='utf8'))
 cv=time_cost['opencv'];api=time_cost['api'];hy=time_cost['hybrid']
 timing=f'''<p>以下比较本次50张实验的程序记录。混合方法复用API初稿，只新增离线精修步骤。</p><div class="class-scroll"><table class="cost-table"><thead><tr><th>方法</th><th>处理范围</th><th>记录耗时</th><th>API费用</th></tr></thead><tbody><tr><th>OpenCV</th><td>50张／109实例</td><td><b>{cv['wall_seconds']:.1f}秒</b><br>完整基线运行用时</td><td><b>¥0</b><br>不调用API</td></tr><tr><th>image2.5</th><td>152次请求，含重试<br>最终105／109实例有输出</td><td><b>{api['attempt_seconds_sum']/60:.1f}分钟</b><br>逐次请求任务耗时之和</td><td>已知估算 <b>¥{api['known_cost_estimate_cny']:.2f}</b><br>另有{api['unknown_cost_attempts']}次请求费用未知</td></tr><tr><th>image2.5＋OpenCV</th><td>精修已有105个实例</td><td>API阶段同上<br>精修额外约 <b>{hy['additional_processing_seconds_sum']:.1f}秒</b><br>逐图处理耗时之和</td><td>沿用API阶段费用<br>精修新增 <b>¥0</b></td></tr></tbody></table></div><h3>这些时间应该怎样理解？</h3><p>OpenCV的46.8秒是一次运行的实际经过时间；API的109.1分钟是152次请求任务耗时相加，包含重试及单次结果处理，<b>不是从启动到完成的实际等待时长</b>。并发和多轮重试间隔会影响实际等待时间，因此不能直接计算提速倍数。</p><h3>这些费用包含什么？</h3><p>¥5.15是已知API费用的估算部分，并非平台实扣总账单。失败请求费用未知不能当作免费；上述API时间与费用均不含两项历史复用结果的原始请求，以及更早舍弃的试验。</p><p class="takeaway">OpenCV无需API费用；在已有API结果上做精修，本次只额外增加约59秒的处理记录，不增加API费用。</p><p class="muted">不包含人工复核、算法开发、电脑／电力成本及报告整理。API实扣金额和整批实际经过时间未完整记录。数据来自历史运行，不是新一轮测速或当前报价。</p>'''

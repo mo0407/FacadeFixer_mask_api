@@ -9,13 +9,13 @@
   "created_at": "2026-09-28T14:59:16.378213+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Linearcrack",
+    "Crack",
     "Peeling",
     "Surfacecontaminants",
     "Vegetationgrowth"
   ],
   "visually_proposed_classes": [
-    "Linearcrack",
+    "Crack",
     "Peeling",
     "Surfacecontaminants",
     "Vegetationgrowth"
@@ -1530,7 +1530,7 @@
     {
       "id": 2,
       "class_code": "C",
-      "class_name": "Linearcrack",
+      "class_name": "Crack",
       "bbox_xyxy": [
         164,
         72,
@@ -2421,7 +2421,10 @@
         "exclude_pipe_edge": true,
         "visual_spatial_constraints": "x<205+0.013*y"
       },
-      "overlay_reviewed": true
+      "overlay_reviewed": true,
+      "original_class_code": "C",
+      "original_class_name": "Linearcrack",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 3,
@@ -5173,5 +5176,6 @@
     "selected_revision": "builtin50_pixelaligned_20260928_v4",
     "provenance_directory": "provenance/18",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

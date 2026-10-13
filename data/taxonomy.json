@@ -1,0 +1,22 @@
+{
+  "version": "facade_20261013",
+  "date": "2026-10-13",
+  "changes": {
+    "C": "裂缝（含原网裂M）",
+    "M": "merged_into_C",
+    "L": "白桦"
+  },
+  "class_counts": {
+    "C": 23,
+    "D": 17,
+    "L": 2,
+    "P": 29,
+    "R": 3,
+    "S": 21,
+    "T": 11,
+    "V": 3
+  },
+  "total_instances": 109,
+  "mask_pixels_changed": false,
+  "note": "Instance masks and bboxes unchanged. Class masks for former M images are regrouped. Original class metadata retained for provenance. L label follows user spelling, not a new image-based diagnosis."
+}

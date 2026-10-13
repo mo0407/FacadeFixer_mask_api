@@ -9,18 +9,18 @@
   "created_at": "2026-09-28T14:00:54.611366+00:00",
   "stage": "segmentation_complete_candidate",
   "classes_present": [
-    "Mapcracking",
+    "Crack",
     "Ruststain"
   ],
   "visually_proposed_classes": [
-    "Mapcracking",
+    "Crack",
     "Ruststain"
   ],
   "defects": [
     {
       "id": 1,
-      "class_code": "M",
-      "class_name": "Mapcracking",
+      "class_code": "C",
+      "class_name": "Crack",
       "bbox_xyxy": [
         189,
         15,
@@ -1642,7 +1642,10 @@
         15,
         469,
         493
-      ]
+      ],
+      "original_class_code": "M",
+      "original_class_name": "Mapcracking",
+      "class_name_zh": "裂缝"
     },
     {
       "id": 2,
@@ -2767,8 +2770,8 @@
   "mask_path": "masks/civil_003656_DJI_20240528105657_0529_V_4.png",
   "overlay_path": "overlays/civil_003656_DJI_20240528105657_0529_V_4.png",
   "class_mask_paths": {
-    "M": "class_masks/civil_003656_DJI_20240528105657_0529_V_4_M.png",
-    "T": "class_masks/civil_003656_DJI_20240528105657_0529_V_4_T.png"
+    "T": "class_masks/civil_003656_DJI_20240528105657_0529_V_4_T.png",
+    "C": "class_masks/civil_003656_DJI_20240528105657_0529_V_4_C.png"
   },
   "empty_proposals": [],
   "foreground_pixels": 7727,
@@ -2861,5 +2864,6 @@
     "selected_revision": "builtin50_multi_instance_20260928_v2",
     "provenance_directory": "provenance/13",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

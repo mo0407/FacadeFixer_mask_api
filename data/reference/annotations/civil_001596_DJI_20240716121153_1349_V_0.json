@@ -3786,5 +3786,6 @@
     "selected_revision": "builtin50_pixelaligned_20260928_v4",
     "provenance_directory": "provenance/03",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }

@@ -1689,5 +1689,6 @@
     "selected_revision": "builtin50_multi_instance_20260928_v2",
     "provenance_directory": "provenance/25",
     "historical_paths_are_provenance_only": true
-  }
+  },
+  "taxonomy_version": "facade_20261013"
 }
