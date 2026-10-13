@@ -1,0 +1,4 @@
+interface:
+  display_name: "裂缝mask位移判断与复位"
+  short_description: "逐实例检查整体偏移，仅对确认偏移调用复位并复核候选结果"
+  default_prompt: "使用 $facade-crack-realign 检查API裂缝和网裂mask，确认整体位移时才调用复位并检查候选。"

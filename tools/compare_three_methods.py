@@ -4,6 +4,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 from PIL import Image
+from reporting_classes import MERGE_NOTE, class_reporting_metadata, summarize_classes
 ROOT=Path(__file__).resolve().parent.parent
 NAMES={'opencv':'OpenCV','image25':'image2.5','hybrid':'image2.5 + OpenCV'}
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -87,12 +88,13 @@ def main():
  for raw in [r for r in rows if r['method']=='image25' and r['common_available']]:
   new=next(r for r in rows if r['method']=='hybrid' and r['index']==raw['index'] and r['id']==raw['id']);deltas.append({'index':raw['index'],'id':raw['id'],'class_code':raw['class_code'],'api_iou':raw['iou'],'hybrid_iou':new['iou'],'delta_iou':new['iou']-raw['iou'],'delta_boundary_f1':new['boundary_f1']-raw['boundary_f1']})
  summary['hybrid_change']={'improved_iou':sum(r['delta_iou']>1e-9 for r in deltas),'worse_iou':sum(r['delta_iou']< -1e-9 for r in deltas),'unchanged_iou':sum(abs(r['delta_iou'])<=1e-9 for r in deltas)}
- classes=[{'method':k,'class_code':c,**aggregate([r for r in rows if r['method']==k and r['class_code']==c])} for k in NAMES for c in sorted({r['class_code'] for r in rows})]
+ classes=summarize_classes(rows,NAMES)
+ summary['class_reporting']=class_reporting_metadata(classes)
  write(out/'summary.json',summary);write(out/'provenance.json',provenance);csvout(out/'instances.csv',rows);csvout(out/'images.csv',image_rows);csvout(out/'classes.csv',classes);csvout(out/'refinement_changes.csv',sorted(deltas,key=lambda r:r['delta_iou']))
  table='<table><tr><th>方法</th><th>可用/109</th><th>IoU均值</th><th>Dice均值</th><th>精确率</th><th>召回率</th><th>边界F1</th><th>共同105 IoU</th></tr>'
  for k,label in NAMES.items():
   entry=summary['methods'][k];a=entry['all_instances'];table+=f'<tr><td>{label}</td><td>{entry["available"]}/109</td>'+''.join(f'<td>{a["macro_"+m]:.4f}</td>' for m in ['iou','dice','precision','recall','boundary_f1'])+f'<td>{entry["common_available_instances"]["macro_iou"]:.4f}</td></tr>'
- table+='</table>'
+ table+='</table><p>'+html.escape(MERGE_NOTE)+f' 本轮按{summary["class_reporting"]["class_count"]}类报告，裂缝含{summary["class_reporting"]["class_instances"].get("C+M",0)}个实例。</p>'
  doc='''<!doctype html><meta charset="utf-8"><title>三种方法与参考真值对比</title><style>body{font:15px system-ui;background:#eee;margin:24px}section{background:white;padding:12px;margin:18px 0}.panels{display:flex}figure{flex:1;min-width:0;margin:5px}img{width:100%;height:380px;object-fit:contain}table{border-collapse:collapse;background:white}td,th{border:1px solid #ccc;padding:10px}h2{font-size:17px}</style><h1>OpenCV / image2.5 / image2.5+OpenCV 与参考标注</h1><p>参考为用户保留的v6候选标注，并非独立专家真值；以下指标是与该参考的一致度。全部109实例中，API与混合方法缺失4个，缺失按0分计。共同105列用于排除请求失败影响。固定bbox/类型/id匹配，未用参考mask调整分割。</p><p>IoU=交集/并集；Dice=2交集/两者面积和；精确率衡量误选，召回率衡量漏选；边界F1使用原图2像素容差。均值按实例等权，越高越贴合参考；不会用大量背景像素抬高准确率。</p>'''+table+'<p><a href="instances.csv">逐实例</a> · <a href="images.csv">逐图总mask</a> · <a href="classes.csv">按类别</a> · <a href="refinement_changes.csv">精修增减排序</a> · <a href="summary.json">完整汇总（含微平均）</a></p>'+''.join(cards)
  import re
  doc=re.sub(r'(<a href="((?:reference|opencv|image25|hybrid)/overlays/[^"<>]+)">.*?</a>)',lambda m:m.group(1)+'<p><a href="'+m.group(2).replace('/overlays/','/masks/')+'">黑白mask（原尺寸）</a></p>',doc,flags=re.S)

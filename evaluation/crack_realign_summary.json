@@ -1,0 +1,24 @@
+{
+  "created_date": "2026-10-13",
+  "category": "裂缝",
+  "source_class_codes": [
+    "C",
+    "M"
+  ],
+  "instances": 23,
+  "mean_policy": "Macro IoU across all 23 instances; original C/M retained; no unweighted averaging of class means",
+  "macro_iou": {
+    "api_iou": 0.1605916326983319,
+    "shift_v1_iou": 0.1828140206872206,
+    "shift_v2_iou": 0.18553063716862725
+  },
+  "v2_vs_v1": {
+    "improved": 3,
+    "worsened": 0,
+    "unchanged": 20
+  },
+  "reference_version": "builtin50_litter_wall_20260928_v6 candidate reference; not independent expert ground truth",
+  "reference_mask_blobs_verified_against_github": 23,
+  "scope": "Retrospective algorithm-only comparison; the new visual pre-judgment/post-verification skill has not been rerun on these real images",
+  "test_limit": "Rules were adjusted after examining this batch; not independent validation"
+}

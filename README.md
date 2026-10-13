@@ -67,6 +67,8 @@ python scripts/refine_api_masks.py --input API_RESULT_DIR --output NEW_REFINED_D
 
 ## 4. 评价与测试
 
+分类统计统一把原始 **C（裂缝）与 M（网裂）合并为“裂缝”**，共23个实例，汇总表使用 `C+M` 表示这一组。按23个实例等权重算 IoU、Dice 和边界F1，不是两个类别均值的简单平均。合并后共8个统计类别；原始标注、模型输入和逐实例CSV仍保留C/M，保证匹配与追溯。整体109实例指标不受此分类合并影响。
+
 ```powershell
 python tools/compare_three_methods.py --reference data/reference --opencv outputs_opencv50 --image25 API_RESULT_DIR --hybrid NEW_REFINED_DIR --output NEW_COMPARISON_DIR
 python tests/test_dataset.py
@@ -96,3 +98,35 @@ python tools/build_experiment_recap.py
 ```
 
 报告工具说明见[tools/README.md](tools/README.md)。生成新的三方法比较请使用上面的评价命令；`collect_results50.py`仅针对原实验两批目录。报告展示所需的历史图片仍保留原路径，既有在线链接不变。
+
+## 可选 skill：先判断位移，再复位
+
+[facade-crack-realign](skills/facade-crack-realign/SKILL.md) 对API生成的裂缝mask逐实例处理，默认作为可选后处理，不改变纯API实验。流程：**坐标还原与校验 → 模型看原图/叠加图 → 确认整体偏移才调用复位 → 模型复核候选 → 接受或沿用原稿**。
+
+已对齐、形状/线宽错误、不确定或几何映射未验证的实例跳过复位；原稿、候选、判定证据、输入哈希、位移和耗时均记录。C/M输入都适用，统计统一归为裂缝。
+
+```powershell
+pip install -r skills/facade-crack-realign/scripts/requirements.txt
+# 按数据格式准备inputs_crack.json，生成逐实例叠加图与判断模板
+python skills/facade-crack-realign/scripts/postprocess.py inspect --inputs inputs_crack.json --output crack_inspection
+# 模型或人工看crack_inspection/review.html，填写其中的decisions.json
+python skills/facade-crack-realign/scripts/postprocess.py propose --decisions crack_inspection/decisions.json --output crack_proposals
+# 再看候选叠加图，为实际移动的实例填写verifications.json
+python skills/facade-crack-realign/scripts/postprocess.py finalize --proposals crack_proposals --verifications verifications.json --output crack_final
+# 无API调用的离线验证
+python skills/facade-crack-realign/scripts/test_postprocess.py
+```
+
+见[输入与判定JSON格式](skills/facade-crack-realign/references/decision-schema.md)及[API接入说明](skills/facade-crack-realign/references/api-integration.md)。`inspect`自动写入原图/mask哈希，判定时保持哈希不变；后复核必须绑定实际候选哈希。最终输出位于`crack_final/instance_masks/`、`overlays/`和`records.json`，mask保持原图尺寸、bbox限制，并附面积和RLE。默认最多允许2%前景因触框丢失；如需完整保留，给`propose`增加`--min-kept 1`。
+
+Codex可将此skill文件夹安装到个人skills目录后用 `$facade-crack-realign` 调用。普通Python图像API不会自动执行`SKILL.md`：当前`batch_local.py`尚未自动调用视觉判断API，需由视觉agent或人工填写判定文件；完全自动接入时另行配置支持原图/叠加图与结构化输出的视觉模型。OpenCV复位不调用API，额外视觉判断的时间、token与费用应单独记录。
+
+### 已保存的位移试验（23个裂缝实例）
+
+| 版本 | 平均实例IoU |
+|---|---:|
+| image2.5原稿 | 0.161 |
+| 旧整体位移版 | 0.183 |
+| 分段一致性改进版 | 0.186 |
+
+统计文件：[汇总](evaluation/crack_realign_summary.json)、[逐实例](evaluation/crack_realign_instances.csv)。这是此前位移算法的同批对照，尚未在50张真实样本上重新执行新增的“模型先判断、再复位、后复核”skill；它与原三方法中的边界精修实验分开记录。参考来自用户保留的候选标注，规则也在本批样本分析后调整，不能当作独立准确率。整体平移无法修复线宽、形状、漏分支或选错目标。

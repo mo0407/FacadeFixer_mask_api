@@ -77,5 +77,29 @@
     "improved_iou": 61,
     "worse_iou": 31,
     "unchanged_iou": 13
+  },
+  "class_reporting": {
+    "class_count": 8,
+    "class_instances": {
+      "C+M": 23,
+      "P": 29,
+      "S": 21,
+      "T": 11,
+      "R": 3,
+      "D": 17,
+      "L": 2,
+      "V": 3
+    },
+    "merged_classes": {
+      "C+M": {
+        "name": "裂缝",
+        "source_class_codes": [
+          "C",
+          "M"
+        ]
+      }
+    },
+    "aggregation": "Equal-weight mean of individual instance scores; missing instances retain zero scores",
+    "note": "统计时将C裂缝与M网裂合并为“裂缝”（C+M）；按合并后的逐实例指标等权平均，原始标注和逐实例C/M编码保留。"
   }
 }
